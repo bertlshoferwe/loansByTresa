@@ -1,6 +1,6 @@
-import React, { Component } from './node_modules/react';
-import { connect } from './node_modules/react-redux';
-import { withRouter } from './node_modules/react-router'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router'
 import {  } from '../Actions';
 
 class Home extends Component {
