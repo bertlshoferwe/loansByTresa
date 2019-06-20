@@ -9,6 +9,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router'
 import thunk                                from 'redux-thunk';
 import Reducers                           from './Reducers';
 import * as serviceWorker              from './serviceWorker';
+import './index.css';
 import Home                               from './Components/home';
 
 
