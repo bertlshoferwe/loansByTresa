@@ -10,6 +10,7 @@ import thunk                                from 'redux-thunk';
 import Reducers                           from './Reducers';
 import * as serviceWorker              from './serviceWorker';
 import './index.css';
+import Footer                           from './Components/Common/Footer'
 import Home                               from './Components/home';
 
 
@@ -52,7 +53,7 @@ class App extends Component {
                           </Switch>
                       </div>
                       
-                      {/* <Footer /> */}
+                     <Footer />
                   </div>    
 
               </ConnectedRouter>

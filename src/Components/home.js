@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router'
 import { } from '../Actions';
-import styles from '../Style.module.css';
+import '../app.scss';
 import Logo from '../images/Logo.png';
-import {Card, CardActions, ButtonBase, Typography, makeStyles} from '@material-ui/core';
+import { ButtonBase, Typography } from '@material-ui/core';
 
 class Home extends Component {
     constructor(props) {
@@ -20,94 +20,94 @@ class Home extends Component {
     render() {
         const cardSet1 = [
             {
-              id: 1,
-              title: 'Loans',
-              icon: 'home'
+                id: 1,
+                title: 'Loans',
+                icon: 'home'
             },
             {
                 id: 2,
-              title: 'Apply',
-              icon: 'library_books'
+                title: 'Apply',
+                icon: 'library_books'
             },
-          ];
+        ];
 
-          const cardSet2 = [
+        const cardSet2 = [
             {
                 id: 3,
-              title: 'Loan Info',
-              icon: 'info'
+                title: 'Loan Info',
+                icon: 'info'
             },
             {
                 id: 4,
                 title: 'About Me',
                 icon: 'account_box'
-              },
-          ];
-          
-          
+            },
+        ];
+
+
 
         let display = <div>
 
-                            <div className={styles.background} />
+            <div className='background' />
 
-                        <div className={styles.homeWrapper} >
-                            
-                            <div className={styles.logoWrapper} >
-                                <img className={styles.logo} src={Logo} alt='' />
-                            </div>
+            <div className='homeWrapper' >
 
-                            <div className={styles.optionsWrapper}>
-                            <div className={styles.cardWrapper}>
-                            {cardSet1.map(card =>  (<div key={card.id} className={styles.homePaper} >
-                                                    <ButtonBase
-                                                        focusRipple
-                                                        className={styles.homeButton}
-                                                    >
-                                                    <span>
-                                                        <i className={ `material-icons ${styles.optionsImage}` }> {card.icon} </i>
-                                                    </span>
-                                                        <Typography
-                                                            variant="h5"
-                                                            className={styles.optionsText}
-                                                        >
-                                                            {card.title}
-                                                        </Typography>
-                                                    </ButtonBase>
-                                                </div>
-                                                    ))}
+                <div className='logoWrapper' >
+                    <img className='logo' src={Logo} alt='' />
+                </div>
 
-                             </div>
-                             <div className={styles.cardWrapper}>                       
-
-                            {cardSet2.map(card =>  (<div key={card.id} className={styles.homePaper} >
-                                                    <ButtonBase
-                                                        focusRipple
-                                                        className={styles.homeButton}
-                                                    >
-                                                    <span>
-                                                        <i className={ `material-icons ${styles.optionsImage}` }> {card.icon} </i>
-                                                    </span>
-                                                        <Typography
-                                                            variant="h5"
-                                                            className={styles.optionsText}
-                                                        >
-                                                            {card.title}
-                                                        </Typography>
-                                                    </ButtonBase>
-                                                </div>
-                                                    ))}
-                            </div>
-                            </div>
-                            
-                        </div> 
+                <div className='optionsWrapper'>
+                    <div className='cardWrapper'>
+                        {cardSet1.map(card => (<div key={card.id} className='homePaper' >
+                            <ButtonBase
+                                focusRipple
+                                className='homeButton'
+                            >
+                                <span>
+                                    <i className='material-icons optionsImage'> {card.icon} </i>
+                                </span>
+                                <Typography
+                                    variant="h5"
+                                    className='optionsText'
+                                >
+                                    {card.title}
+                                </Typography>
+                            </ButtonBase>
+                        </div>
+                        ))}
 
                     </div>
+                    <div className='cardWrapper'>
+
+                        {cardSet2.map(card => (<div key={card.id} className='homePaper' >
+                            <ButtonBase
+                                focusRipple
+                                className='homeButton'
+                            >
+                                <span>
+                                    <i className='material-icons optionsImage'> {card.icon} </i>
+                                </span>
+                                <Typography
+                                    variant="h5"
+                                    className='optionsText'
+                                >
+                                    {card.title}
+                                </Typography>
+                            </ButtonBase>
+                        </div>
+                        ))}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
 
 
 
 
         return (
-            
+
             <div >
                 {display}
             </div>
