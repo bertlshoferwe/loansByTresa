@@ -1,5 +1,5 @@
 import React, { Component }     from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography, Link } from '@material-ui/core';
 import fairHouse from '../../images/fairHouse.png'
 import altius from '../../images/altius.png'
 import facebook from '../../images/facebook.png'
@@ -56,17 +56,10 @@ class Footer extends Component{
                                 <Typography variant="subtitle2" >
                                     {Info.Licensing.nmlsr} 
                                 </Typography>
-                                <img src={Info.Licensing.logo} alt=' '/>
+                                <a>
+                                    <img src={Info.Licensing.logo} alt=' '/>
+                                </a>
                                 <img src={Info.Licensing.equalHouse} className='equal' alt=' '/>
-                            </div>
-                            <div>
-                                <h2 >
-                                    CONNECT
-                                </h2>
-                                <div className='connect' >
-                                    <img src={Info.Connect.facebook} className='connectImg' alt=' '/>
-                                    <img src={Info.Connect.instagram} className='connectImg' alt=' '/>
-                                </div>
                             </div>
                             <div>
                                 <h2 >
@@ -92,6 +85,39 @@ class Footer extends Component{
                                     {Info.Contact.address2}
                                 </Typography>
                             </div>
+                            <div className='link'>
+                                <h2 >
+                                    LINKS 
+                                </h2>
+                                <Link variant="subtitle1" >
+                                    Home
+                                </Link>
+                                <Link variant="subtitle1" >
+                                    About
+                                </Link>
+                                <Link variant="subtitle1" >
+                                    Apply 
+                                </Link>
+                                <Link variant="subtitle1" >
+                                    Loans
+                                </Link>
+                                <Link variant="subtitle1" >
+                                    Privacy Policy
+                                </Link>
+                                <Link variant="subtitle1" >
+                                    Terms of Use
+                                </Link>
+                            </div>
+                            <div>
+                                <h2 >
+                                    CONNECT
+                                </h2>
+                                <div className='connect' >
+                                    <img src={Info.Connect.facebook} className='connectImg' alt=' '/>
+                                    <img src={Info.Connect.instagram} className='connectImg' alt=' '/>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div className='bottomfooter'>
                             <div>

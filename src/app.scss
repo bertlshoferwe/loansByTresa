@@ -31,7 +31,8 @@
       .topfooterinfo{
         display:flex;
         flex-direction: column;
-        justify-content: space-evenly;  
+        justify-content: space-evenly; 
+        margin-right:5vh; 
         img{
           margin-top: 1vh;
           width: 19vh
@@ -50,6 +51,11 @@
           height:6vh;
           width:8vw
         }
+      };
+      .link{
+        display: flex;
+        flex-direction: column;
+        color:rgb(8, 59, 102);
       }
     };
     
