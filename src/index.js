@@ -12,6 +12,11 @@ import * as serviceWorker              from './serviceWorker';
 import './index.css';
 import Footer                           from './Components/Common/Footer'
 import Home                               from './Components/home';
+import About                               from './Components/About';
+import Loans                               from './Components/Loans';
+import Glossary                              from './Components/Glossary';
+import PrivacyPolicy                               from './Components/PrivacyPolicy';
+import TermsOfUse                               from './Components/TermsOfUse';
 
 
 
@@ -48,7 +53,11 @@ class App extends Component {
                       <div className='app-content'>
                           <Switch>
                               <Route exact path="/" component={Home} />
-                                
+                              <Route path="/About" component={About} />
+                              <Route path="/Loans" component={Loans} />
+                              <Route path="/Glossary" component={Glossary} />
+                              <Route path="/Privacy_Policy" component={PrivacyPolicy} />
+                              <Route path="/Terms_Of_Use" component={TermsOfUse} />
                                             
                           </Switch>
                       </div>

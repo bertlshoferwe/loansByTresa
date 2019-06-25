@@ -5,16 +5,23 @@ import { } from '../Actions';
 import '../app.scss';
 import Logo from '../images/Logo.png';
 import { ButtonBase, Typography } from '@material-ui/core';
+import ApplyDialog from './Common/ApplyDialog'
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            isOpen: false
         };
 
-
+            this.toggleDialog = this.toggleDialog.bind(this)
     }
+
+toggleDialog(){
+    this.setState({
+        isOpen:!this.state.isOpen
+    })
+}
 
 
     render() {
@@ -22,25 +29,30 @@ class Home extends Component {
             {
                 id: 1,
                 title: 'Loans',
-                icon: 'home'
+                icon: 'home',
+                route: '/Loans'
             },
             {
                 id: 2,
                 title: 'Apply',
-                icon: 'library_books'
+                icon: 'library_books',
+                route: '',
+                handleClick:this.toggleDialog
             },
         ];
 
         const cardSet2 = [
             {
                 id: 3,
-                title: 'Loan Info',
-                icon: 'info'
+                title: 'Glossary',
+                icon: 'help',
+                route: '/Glossary'
             },
             {
                 id: 4,
                 title: 'About Me',
-                icon: 'account_box'
+                icon: 'account_box',
+                route: '/About'
             },
         ];
 
@@ -62,6 +74,8 @@ class Home extends Component {
                             <ButtonBase
                                 focusRipple
                                 className='homeButton'
+                                href={card.route}
+                                onClick={card.handleClick}
                             >
                                 <span>
                                     <i className='material-icons optionsImage'> {card.icon} </i>
@@ -83,6 +97,7 @@ class Home extends Component {
                             <ButtonBase
                                 focusRipple
                                 className='homeButton'
+                                href={card.route}
                             >
                                 <span>
                                     <i className='material-icons optionsImage'> {card.icon} </i>
@@ -110,6 +125,7 @@ class Home extends Component {
 
             <div >
                 {display}
+                <ApplyDialog isOpen={this.state.isOpen} toggle={this.toggleDialog}/>
             </div>
         );
     }

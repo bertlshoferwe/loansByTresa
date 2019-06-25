@@ -1,4 +1,5 @@
 import React, { Component }     from 'react';
+import { withRouter } from "react-router";
 import { Typography, Link } from '@material-ui/core';
 import fairHouse from '../../images/fairHouse.png'
 import altius from '../../images/altius.png'
@@ -56,7 +57,7 @@ class Footer extends Component{
                                 <Typography variant="subtitle2" >
                                     {Info.Licensing.nmlsr} 
                                 </Typography>
-                                <a>
+                                <a href='https://altiusmortgage.com/'>
                                     <img src={Info.Licensing.logo} alt=' '/>
                                 </a>
                                 <img src={Info.Licensing.equalHouse} className='equal' alt=' '/>
@@ -68,9 +69,11 @@ class Footer extends Component{
                                 <Typography variant="subtitle1" >
                                     Direct Number:
                                 </Typography>
-                                <Typography variant="subtitle2" >
+                                <Link href={'tel:' + Info.Contact.number }>
+                                    <Typography variant="subtitle2" >
                                     {Info.Contact.number} 
-                                </Typography>
+                                     </Typography>
+                                </Link>
                                 <Typography variant="subtitle1" >
                                     Fax:
                                 </Typography>
@@ -87,35 +90,53 @@ class Footer extends Component{
                             </div>
                             <div className='link'>
                                 <h2 >
-                                    LINKS 
+                                    SITE MAP 
                                 </h2>
-                                <Link variant="subtitle1" >
+                                <Link href='/' >
+                                    <Typography variant="subtitle2" >
                                     Home
+                                    </Typography>
                                 </Link>
-                                <Link variant="subtitle1" >
+                                <Link href='/About' >
+                                    <Typography variant="subtitle2" >
                                     About
+                                    </Typography>
                                 </Link>
-                                <Link variant="subtitle1" >
-                                    Apply 
+                                <Link >
+                                    <Typography variant="subtitle2" >
+                                    Apply
+                                    </Typography>
                                 </Link>
-                                <Link variant="subtitle1" >
+                                <Link href='/Loans'variant="subtitle1" >
+                                    <Typography variant="subtitle2" >
                                     Loans
+                                    </Typography>
                                 </Link>
-                                <Link variant="subtitle1" >
+                                <Link href='/Privacy_Policy' variant="subtitle1" >
+                                    <Typography variant="subtitle2" >
                                     Privacy Policy
+                                    </Typography>
                                 </Link>
-                                <Link variant="subtitle1" >
+                                <Link href='/Terms_Of_Use' variant="subtitle1" >
+                                    <Typography variant="subtitle2" >
                                     Terms of Use
+                                    </Typography>
                                 </Link>
                             </div>
-                            <div>
+                            <div className='link' >
                                 <h2 >
                                     CONNECT
                                 </h2>
-                                <div className='connect' >
-                                    <img src={Info.Connect.facebook} className='connectImg' alt=' '/>
-                                    <img src={Info.Connect.instagram} className='connectImg' alt=' '/>
-                                </div>
+                                <Link href='https://www.facebook.com/loansbytresa' >
+                                    <Typography variant="subtitle1" >
+                                        Facebook
+                                    </Typography>
+                                </Link>
+                                <Link href='https://www.instagram.com/loansbytresa/' >
+                                    <Typography variant="subtitle1" >
+                                    Instagram
+                                    </Typography>
+                                </Link>
                             </div>
                             
                         </div>
@@ -142,4 +163,4 @@ class Footer extends Component{
 }
 
 
-export default Footer
+export default withRouter(Footer)

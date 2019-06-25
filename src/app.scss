@@ -43,15 +43,6 @@
           width: 5vh
         }
       };
-      .connect{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        .connectImg{
-          height:6vh;
-          width:8vw
-        }
-      };
       .link{
         display: flex;
         flex-direction: column;
@@ -73,7 +64,14 @@
     }
 }
 
-
+.iframe{
+  margin-top:7vh;
+  width: 100vw;
+  height: 100vh
+}
+.DialogAppBar{
+  background-color:rgb(8, 59, 102) !important
+}
 
 
 @include for-phone-only{
