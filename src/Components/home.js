@@ -15,6 +15,7 @@ class Home extends Component {
         };
 
             this.toggleDialog = this.toggleDialog.bind(this)
+            this.pageNavigate = this.pageNavigate.bind(this)
     }
 
 toggleDialog(){
@@ -23,6 +24,11 @@ toggleDialog(){
     })
 }
 
+pageNavigate( pageRoute ){
+    this.props.history.push({
+        pathname: pageRoute,
+    })}
+
 
     render() {
         const cardSet1 = [
@@ -30,14 +36,15 @@ toggleDialog(){
                 id: 1,
                 title: 'Loans',
                 icon: 'home',
-                route: '/Loans'
+                route: '/Loans',
+                handleClick: this.pageNavigate
             },
             {
                 id: 2,
                 title: 'Apply',
                 icon: 'library_books',
                 route: '',
-                handleClick:this.toggleDialog
+                handleClick: this.toggleDialog
             },
         ];
 
@@ -46,13 +53,15 @@ toggleDialog(){
                 id: 3,
                 title: 'Glossary',
                 icon: 'help',
-                route: '/Glossary'
+                route: '/Glossary',
+                handleClick: this.pageNavigate
             },
             {
                 id: 4,
                 title: 'About Me',
                 icon: 'account_box',
-                route: '/About'
+                route: '/About',
+                handleClick: this.pageNavigate
             },
         ];
 
@@ -75,7 +84,7 @@ toggleDialog(){
                                 focusRipple
                                 className='homeButton'
                                 href={card.route}
-                                onClick={card.handleClick}
+                                onClick={ () => {card.handleClick( card.route)} }
                             >
                                 <span>
                                     <i className='material-icons optionsImage'> {card.icon} </i>
@@ -98,6 +107,7 @@ toggleDialog(){
                                 focusRipple
                                 className='homeButton'
                                 href={card.route}
+                                onClick={ () => {card.handleClick( card.route)} }
                             >
                                 <span>
                                     <i className='material-icons optionsImage'> {card.icon} </i>

@@ -11,7 +11,14 @@ class Footer extends Component{
     constructor(props){
         super(props);
         this.state={};
+        
+        this.pageNavigate = this.pageNavigate.bind(this)
     }
+
+    pageNavigate( pageRoute ){
+        this.props.history.push({
+            pathname: pageRoute,
+        })}
 
 
     render() {
@@ -92,12 +99,12 @@ class Footer extends Component{
                                 <h2 >
                                     SITE MAP 
                                 </h2>
-                                <Link href='/' >
+                                <Link onClick={() => {this.pageNavigate('/')} } >
                                     <Typography variant="subtitle2" >
                                     Home
                                     </Typography>
                                 </Link>
-                                <Link href='/About' >
+                                <Link onClick={() => {this.pageNavigate( '/About' )} } >
                                     <Typography variant="subtitle2" >
                                     About
                                     </Typography>
@@ -107,17 +114,17 @@ class Footer extends Component{
                                     Apply
                                     </Typography>
                                 </Link>
-                                <Link href='/Loans'variant="subtitle1" >
+                                <Link onClick={() => {this.pageNavigate('/Loans')} } >
                                     <Typography variant="subtitle2" >
                                     Loans
                                     </Typography>
                                 </Link>
-                                <Link href='/Privacy_Policy' variant="subtitle1" >
+                                <Link onClick={() => {this.pageNavigate('Privacy_Policy')} } >
                                     <Typography variant="subtitle2" >
                                     Privacy Policy
                                     </Typography>
                                 </Link>
-                                <Link href='/Terms_Of_Use' variant="subtitle1" >
+                                <Link onClick={() => {this.pageNavigate('Terms_Of_Use')} } >
                                     <Typography variant="subtitle2" >
                                     Terms of Use
                                     </Typography>
