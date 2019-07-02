@@ -10,6 +10,7 @@ import thunk                                from 'redux-thunk';
 import Reducers                           from './Reducers';
 import * as serviceWorker              from './serviceWorker';
 import './index.css';
+import ScrollToTop                           from './scrollToTop'
 import Footer                           from './Components/Common/Footer'
 import Home                               from './Components/home';
 import About                               from './Components/About';
@@ -44,8 +45,8 @@ class App extends Component {
     
     return ( 
           <Provider store={store}>
-              <ConnectedRouter onUpdate={() => window.scrollTo(0,0)} history={history}>
-              
+              <ConnectedRouter  history={history}>
+                <ScrollToTop>
                   <div className='app-body'>
 
                       {/* <Header/> */}
@@ -64,7 +65,7 @@ class App extends Component {
                       
                      <Footer />
                   </div>    
-
+                </ScrollToTop>
               </ConnectedRouter>
           </Provider>
     );

@@ -64,9 +64,9 @@ class Footer extends Component{
                                 <Typography variant="subtitle2" >
                                     {Info.Licensing.nmlsr} 
                                 </Typography>
-                                <a href='https://altiusmortgage.com/'>
+                                
                                     <img src={Info.Licensing.logo} alt=' '/>
-                                </a>
+                                
                                 <img src={Info.Licensing.equalHouse} className='equal' alt=' '/>
                             </div>
                             <div>

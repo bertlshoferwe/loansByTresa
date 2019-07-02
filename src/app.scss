@@ -34,13 +34,13 @@
         justify-content: space-evenly; 
         margin-right:5vh; 
         img{
-          margin-top: 1vh;
-          width: 19vh
+          margin-top: 2vh;
+          width: 12vh
         };
         .equal{
           margin-top: 2vh;
-          height:5vh;
-          width: 5vh
+          height:4vh;
+          width: 4vh
         }
       };
       .link{
@@ -70,6 +70,9 @@
   display:flex;
   flex-direction:column;
   align-items: center;
+  .loadingCircle{
+    color:rgb(232, 131, 2) !important
+  }
 }
 .hide{
   visibility:hidden
@@ -77,12 +80,18 @@
 .iframe{
   margin-top:7vh;
   width: 100vw;
-  height: 100vh
+  height: 100vh;
+  color:rgb(232, 131, 2)
 }
 .DialogAppBar{
   background-color:rgb(8, 59, 102) !important
 }
-
+.nested{
+  padding-Left:4vw !important;
+}
+.cardSpacing{
+  margin-top: 4vh
+}
 
 @include for-phone-only{
     .background{
@@ -159,6 +168,7 @@
         font-size: 28px;
         color:#e88302;
     }
+    
 }
 
 @include for-tablet-portrait-up{

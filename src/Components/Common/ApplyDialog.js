@@ -23,7 +23,7 @@ render() {
 
     const loadingView = (this.state.loading === true)? 
                                                 <div className='loadingView'>
-                                                    <CircularProgress size={80} />
+                                                    <CircularProgress size={80} className='loadingCircle' />
                                                 </div>
                                             :
                                             null
