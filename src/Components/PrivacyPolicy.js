@@ -311,7 +311,7 @@ class PrivacyPolicy extends Component {
 </div>
 
         return (
-            <Container maxWidth="xl" >
+            <Container maxWidth="xl" className='containerMargin' >
 
                 {Display}
 

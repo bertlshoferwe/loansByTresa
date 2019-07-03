@@ -10,8 +10,9 @@ import thunk                                from 'redux-thunk';
 import Reducers                           from './Reducers';
 import * as serviceWorker              from './serviceWorker';
 import './index.css';
-import ScrollToTop                           from './scrollToTop'
-import Footer                           from './Components/Common/Footer'
+import ScrollToTop                           from './scrollToTop';
+import Header                           from './Components/Common/Header';
+import Footer                           from './Components/Common/Footer';
 import Home                               from './Components/home';
 import About                               from './Components/About';
 import Loans                               from './Components/Loans';
@@ -49,7 +50,7 @@ class App extends Component {
                 <ScrollToTop>
                   <div className='app-body'>
 
-                      {/* <Header/> */}
+                      <Header/>
 
                       <div className='app-content'>
                           <Switch>

@@ -160,7 +160,7 @@ class TermsOfUse extends Component{
          
 
         return(
-            <Container>
+            <Container className='containerMargin'>
             
                     {TermsOfUse}
 

@@ -11,11 +11,27 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            Width: window.innerWidth
         };
 
             this.toggleDialog = this.toggleDialog.bind(this)
             this.pageNavigate = this.pageNavigate.bind(this)
+            this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
+    }
+
+componentDidMount() {
+    window.addEventListener('resize', this.updateWindowDimensions);
+}
+
+componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+}
+// Update window dimensions
+updateWindowDimensions() {
+    this.setState({
+        Width: window.innerWidth
+    });
     }
 
 toggleDialog(){
@@ -66,6 +82,23 @@ pageNavigate( pageRoute ){
         ];
 
 
+        const logoOrWords = (this.state.Width < 600)?
+                <img className='logo' src={Logo} alt='' />
+                :
+                <div className='logo'>
+                    <Typography  variant='h1'> Welcome</Typography>
+                    <Typography  variant='h4'> Its easy to get started</Typography>;
+                    <ButtonBase focusRipple
+                                className='applyButton'
+                                onClick={this.toggleDialog }
+                            >
+                                <Typography  variant="h5">
+                                    Click Here To Apply
+                                </Typography>
+                            </ButtonBase>
+                </div>;
+
+
 
         let display = <div>
 
@@ -74,7 +107,7 @@ pageNavigate( pageRoute ){
             <div className='homeWrapper' >
 
                 <div className='logoWrapper' >
-                    <img className='logo' src={Logo} alt='' />
+                    {logoOrWords}
                 </div>
 
                 <div className='optionsWrapper'>

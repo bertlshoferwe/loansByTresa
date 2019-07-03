@@ -3,8 +3,6 @@ import { withRouter } from "react-router";
 import { Typography, Link } from '@material-ui/core';
 import fairHouse from '../../images/fairHouse.png'
 import altius from '../../images/altius.png'
-import facebook from '../../images/facebook.png'
-import insta from '../../images/insta.png'
 import '../../app.scss'
 
 class Footer extends Component{ 
@@ -38,10 +36,7 @@ class Footer extends Component{
                 'address': '11925 South 700 East',
                 'address2':' Draper, UT, 84020'
             },
-            'Connect':{
-                'facebook':facebook,
-                'instagram': insta,
-            },
+            
         }
 
 
