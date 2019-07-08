@@ -46,7 +46,7 @@ class Header extends Component{
             case '/':
                 this.setState({
                     pathname: this.props.location.pathname,
-                    location:'Loans By Tresa'
+                    location:''
                 })
             break;
             case '/About':

@@ -34,7 +34,8 @@ class Footer extends Component{
                 'number':'(801) 923 3166',
                 'fax': '(801) 384 0779',
                 'address': '11925 South 700 East',
-                'address2':' Draper, UT, 84020'
+                'address2':' Draper, UT, 84020',
+                'email': 'Loansbytresa@gmail.com'
             },
             
         }
@@ -77,6 +78,14 @@ class Footer extends Component{
                                      </Typography>
                                 </Link>
                                 <Typography variant="subtitle1" >
+                                    Email:
+                                </Typography>
+                                <Link href='mailto:loansbytresa@gmail.com' >
+                                    <Typography variant="subtitle2" >
+                                        LoansByTresa@gmail.com
+                                    </Typography>
+                                </Link>
+                                <Typography variant="subtitle1" >
                                     Fax:
                                 </Typography>
                                 <Typography variant="subtitle2" >
@@ -95,32 +104,32 @@ class Footer extends Component{
                                     SITE MAP 
                                 </h2>
                                 <Link onClick={() => {this.pageNavigate('/')} } >
-                                    <Typography variant="subtitle2" >
-                                    Home
+                                    <Typography variant="subtitle1" >
+                                        Home
                                     </Typography>
                                 </Link>
                                 <Link onClick={() => {this.pageNavigate( '/About' )} } >
-                                    <Typography variant="subtitle2" >
+                                    <Typography variant="subtitle1" >
                                     About
                                     </Typography>
                                 </Link>
                                 <Link >
-                                    <Typography variant="subtitle2" >
+                                    <Typography variant="subtitle1" >
                                     Apply
                                     </Typography>
                                 </Link>
                                 <Link onClick={() => {this.pageNavigate('/Loans')} } >
-                                    <Typography variant="subtitle2" >
+                                    <Typography variant="subtitle1" >
                                     Loans
                                     </Typography>
                                 </Link>
                                 <Link onClick={() => {this.pageNavigate('Privacy_Policy')} } >
-                                    <Typography variant="subtitle2" >
+                                    <Typography variant="subtitle1" >
                                     Privacy Policy
                                     </Typography>
                                 </Link>
                                 <Link onClick={() => {this.pageNavigate('Terms_Of_Use')} } >
-                                    <Typography variant="subtitle2" >
+                                    <Typography variant="subtitle1" >
                                     Terms of Use
                                     </Typography>
                                 </Link>

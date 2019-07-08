@@ -85,9 +85,9 @@ pageNavigate( pageRoute ){
         const logoOrWords = (this.state.Width < 600)?
                 <img className='logo' src={Logo} alt='' />
                 :
-                <div className='logo'>
+                <div className='welcome'>
                     <Typography  variant='h1'> Welcome</Typography>
-                    <Typography  variant='h4'> Its easy to get started</Typography>;
+                    <Typography  variant='h4'> Its easy to get started</Typography>
                     <ButtonBase focusRipple
                                 className='applyButton'
                                 onClick={this.toggleDialog }
