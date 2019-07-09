@@ -103,12 +103,12 @@ class Footer extends Component{
                                 <h2 >
                                     SITE MAP 
                                 </h2>
-                                <Link onClick={() => {this.pageNavigate('/')} } >
+                                <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('/')} } >
                                     <Typography variant="subtitle1" >
                                         Home
                                     </Typography>
                                 </Link>
-                                <Link onClick={() => {this.pageNavigate( '/About' )} } >
+                                <Link href="javascript:void(0);" onClick={() => {this.pageNavigate( '/About' )} } >
                                     <Typography variant="subtitle1" >
                                     About
                                     </Typography>
@@ -118,17 +118,17 @@ class Footer extends Component{
                                     Apply
                                     </Typography>
                                 </Link>
-                                <Link onClick={() => {this.pageNavigate('/Loans')} } >
+                                <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('/Loans')} } >
                                     <Typography variant="subtitle1" >
                                     Loans
                                     </Typography>
                                 </Link>
-                                <Link onClick={() => {this.pageNavigate('Privacy_Policy')} } >
+                                <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('Privacy_Policy')} } >
                                     <Typography variant="subtitle1" >
                                     Privacy Policy
                                     </Typography>
                                 </Link>
-                                <Link onClick={() => {this.pageNavigate('Terms_Of_Use')} } >
+                                <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('Terms_Of_Use')} } >
                                     <Typography variant="subtitle1" >
                                     Terms of Use
                                     </Typography>
