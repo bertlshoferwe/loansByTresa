@@ -45,14 +45,12 @@ pageNavigate( pageRoute ){
                 title: 'Loans',
                 icon: 'home',
                 route: '/Loans',
-                handleClick: this.pageNavigate
             },
             {
                 id: 2,
                 title: 'Apply',
                 icon: 'library_books',
                 route: '/Apply',
-                handleClick: this.pageNavigate
             },
         ];
 
@@ -62,14 +60,12 @@ pageNavigate( pageRoute ){
                 title: 'Glossary',
                 icon: 'help',
                 route: '/Glossary',
-                handleClick: this.pageNavigate
             },
             {
                 id: 4,
                 title: 'About Me',
                 icon: 'account_box',
                 route: '/About',
-                handleClick: this.pageNavigate
             },
         ];
 
@@ -109,7 +105,7 @@ pageNavigate( pageRoute ){
                                 focusRipple
                                 className='homeButton'
                                 href={card.route}
-                                onClick={ () => {card.handleClick( card.route)} }
+                                onClick={ () => {this.pageNavigate(card.route)} }
                             >
                                 <span>
                                     <i className='material-icons optionsImage'> {card.icon} </i>
@@ -132,7 +128,7 @@ pageNavigate( pageRoute ){
                                 focusRipple
                                 className='homeButton'
                                 href={card.route}
-                                onClick={ () => {card.handleClick( card.route)} }
+                                onClick={ () => {this.pageNavigate(card.route)} }
                             >
                                 <span>
                                     <i className='material-icons optionsImage'> {card.icon} </i>

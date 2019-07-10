@@ -53,6 +53,12 @@ class Header extends Component{
                     location: 'Loans'
                 })
             break;
+            case '/Apply':
+                this.setState({
+                    pathname: this.props.location.pathname,
+                    location: 'Apply'
+                })
+            break;
             case '/Glossary':
                 this.setState({
                     pathname: this.props.location.pathname,

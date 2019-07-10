@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Dialog, AppBar, Toolbar, IconButton, Typography, CircularProgress } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close'
+import { CircularProgress } from '@material-ui/core';
 import '../app.scss'
 
 class Apply extends Component {
