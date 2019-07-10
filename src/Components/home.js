@@ -104,7 +104,7 @@ pageNavigate( pageRoute ){
                             <ButtonBase
                                 focusRipple
                                 className='homeButton'
-                                href={card.route}
+                                href='#'
                                 onClick={ () => {this.pageNavigate(card.route)} }
                             >
                                 <span>
@@ -127,7 +127,7 @@ pageNavigate( pageRoute ){
                             <ButtonBase
                                 focusRipple
                                 className='homeButton'
-                                href={card.route}
+                                href='#'
                                 onClick={ () => {this.pageNavigate(card.route)} }
                             >
                                 <span>
