@@ -16,6 +16,7 @@ import Footer                           from './Components/Common/Footer';
 import Home                               from './Components/home';
 import About                               from './Components/About';
 import Loans                               from './Components/Loans';
+import Apply                               from './Components/Apply';
 import Glossary                              from './Components/Glossary';
 import PrivacyPolicy                               from './Components/PrivacyPolicy';
 import TermsOfUse                               from './Components/TermsOfUse';
@@ -57,6 +58,7 @@ class App extends Component {
                               <Route exact path="/" component={Home} />
                               <Route path="/About" component={About} />
                               <Route path="/Loans" component={Loans} />
+                              <Route path="/Apply" component={Apply} />
                               <Route path="/Glossary" component={Glossary} />
                               <Route path="/Privacy_Policy" component={PrivacyPolicy} />
                               <Route path="/Terms_Of_Use" component={TermsOfUse} />

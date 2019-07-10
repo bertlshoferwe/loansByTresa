@@ -113,7 +113,7 @@ class Footer extends Component{
                                     About
                                     </Typography>
                                 </Link>
-                                <Link >
+                                <Link href="javascript:void(0);" onClick={() => {this.pageNavigate( '/Apply' )} }>
                                     <Typography variant="subtitle1" >
                                     Apply
                                     </Typography>

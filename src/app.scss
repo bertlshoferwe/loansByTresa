@@ -115,7 +115,7 @@
   visibility:hidden
 }
 .iframe{
-  margin-top:6vh;
+  margin-top:4vh;
   width: 100vw;
   height: 100vh;
   color:rgb(232, 131, 2)
@@ -141,8 +141,13 @@
       top: 0; bottom: 0;
         background: rgba(252, 252, 252, 0.6);
       }
+    .appBar{
+      height:4vh !important;
+      position:absolute !important;
+      top:0 !important
+    }
     .logoWrapper{
-      margin-top: 2vh;
+      margin-top: 6vh;
         width: 100vw;
         height: auto;
         display: flex;
@@ -179,7 +184,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center
+        align-items: center;
     }
     .optionsImage{
         font-size: 70px;
@@ -209,8 +214,8 @@
 .headerLogo{
   height:5vh;
   width:6vw;
-  margin:-2vw 0vw 1vw 0vw;
-  margin-right: 2vw
+  margin:-3vw 0vw 1.5vw 0vw;
+  margin-right: 2vw;
 }
 .homeWrapper{
   z-index: 1;
@@ -243,7 +248,7 @@
   padding:0vw !important;
   height: 10vh;
   width: 37vw;
-  border-radius:6px !important
+  border-radius:6px !important;
 }
 .optionsWrapper{
   width: 100vw;
@@ -278,10 +283,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 .iframe{
-  margin-top:13vh
+  margin-top:8vh
 }
 .footer{
   margin-top:0vh;
@@ -301,10 +306,13 @@
 .background::before {
     background: none
 }
+.appBar{
+  height:6vh !important;
+}
 .headerLogo{
-  height:6vh;
-  width:18vw;
-  margin:1.5vw;
+  height:4vh;
+  width:14vw;
+  margin:1vw 0vw 1.5vw 0vw;
   margin-right: 2vw
 }
 .homeWrapper{
@@ -378,17 +386,19 @@
 .footer{
   margin-top:0vh;
 }
-
+.iframe{
+  margin-top:6vh
+}
 }
 
 @include for-tablet-landscape-up{
   .appBar{
-    height:10vh !important;
+    height:8vh !important;
   }
   .headerLogo{
-    height:8vh;
-    width:14vw;
-    margin:1vw;
+    height:6vh;
+    width:12vw;
+    margin:.5vw 0vw 1vw 0vw;
   }
   .welcome{
     width:60vw;
@@ -405,6 +415,9 @@
   .optionsText{
     font-size: 35px !important;
   }
+  .iframe{
+    margin-top:8vh
+  }
     
 }
 
@@ -415,7 +428,16 @@
   }
   .headerLogo{
     width:12vw;
-    height:8vh
+    height:8vh;
+    &:hover{
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background: rgba(8, 59, 102, 0.1);
+      }
+    }
   }
   .welcome{
     width:50vw;
@@ -423,12 +445,35 @@
   .applyButton{
     height:7vh;
     width: 20vw;
+    &:hover{
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background: rgba(8, 59, 102, 0.1);
+      }
+    }
+  }
+  .homeButton{
+    &:hover{
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background: rgba(8, 59, 102, 0.1);
+      }
+    }
   }
   .optionsImage{
     font-size: 75px;
   }
   .optionsText{
     font-size: 45px !important;
+  }
+  .iframe{
+    margin-top:10vh
   }
     
 }

@@ -1,6 +1,6 @@
 import React, { Component }     from 'react';
 import { withRouter } from "react-router";
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Link } from '@material-ui/core';
 import '../../app.scss'
 import Logo from '../../images/Logo.png';
 
@@ -12,7 +12,6 @@ class Header extends Component{
             location:'',
             Width:''
         };
-        this.updateWindowDimensions=this.updateWindowDimensions.bind(this)
         this.pageTitle = this.pageTitle.bind(this)
         this.pageNavigate = this.pageNavigate.bind(this)
     }
@@ -27,26 +26,19 @@ class Header extends Component{
 
     shouldComponentUpdate(nextProps) {
         return this.props.location.pathname !== this.state.pathname
-        || window.innerWidth !== this.state.Width
     };
 
     componentDidUpdate() {
         this.pageTitle()
-        this.updateWindowDimensions()
     };
 
-    updateWindowDimensions() {
-    this.setState({
-        Width: window.innerWidth
-    });
-    }
 
     pageTitle() {
         switch(this.props.location.pathname){
             case '/':
                 this.setState({
                     pathname: this.props.location.pathname,
-                    location:''
+                    location:null
                 })
             break;
             case '/About':
@@ -76,7 +68,7 @@ class Header extends Component{
             case '/Terms_Of_Use':
                 this.setState({
                     pathname: this.props.location.pathname,
-                    location: 'Terms Of USe'
+                    location: 'Terms Of Use'
                 })
             break;
             default:
@@ -91,20 +83,24 @@ class Header extends Component{
 
     render() {
 
-        const header= (this.state.Width < 600)?<div></div> 
+        const headerLogo= (window.innerWidth < 600)?<div>
+                                                        
+                                                    </div> 
                                         :
-                                            <div >
-                                                <AppBar className='appBar' position="fixed">
-                                                <Toolbar>
-                                                    <img src={Logo} alt='logo' className='headerLogo' />
-                                                    <Typography variant="h6" >
-                                                        {this.state.location}
-                                                    </Typography>
-                                                </Toolbar>
-                                                </AppBar>
-                                            </div>
+                                            <Link href='#'  onClick={() => {this.pageNavigate('/')} } >
+                                                <img src={Logo} alt='logo' className='headerLogo' /> 
+                                            </Link> 
 
-        
+        const header = <div >
+                            <AppBar className='appBar' position="fixed">
+                            <Toolbar>
+                                {headerLogo}
+                                <Typography variant="h6" >
+                                    {this.state.location}
+                                </Typography>
+                            </Toolbar>
+                            </AppBar>
+                        </div>
                            
                              
          

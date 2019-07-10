@@ -5,17 +5,14 @@ import { } from '../Actions';
 import '../app.scss';
 import Logo from '../images/Logo.png';
 import { ButtonBase, Typography } from '@material-ui/core';
-import ApplyDialog from './Common/ApplyDialog'
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false,
             Width: window.innerWidth
         };
 
-            this.toggleDialog = this.toggleDialog.bind(this)
             this.pageNavigate = this.pageNavigate.bind(this)
             this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
     }
@@ -34,11 +31,6 @@ updateWindowDimensions() {
     });
     }
 
-toggleDialog(){
-    this.setState({
-        isOpen:!this.state.isOpen
-    })
-}
 
 pageNavigate( pageRoute ){
     this.props.history.push({
@@ -59,8 +51,8 @@ pageNavigate( pageRoute ){
                 id: 2,
                 title: 'Apply',
                 icon: 'library_books',
-                route: '',
-                handleClick: this.toggleDialog
+                route: '/Apply',
+                handleClick: this.pageNavigate
             },
         ];
 
@@ -90,7 +82,7 @@ pageNavigate( pageRoute ){
                     <Typography  variant='h4'> Its easy to get started</Typography>
                     <ButtonBase focusRipple
                                 className='applyButton'
-                                onClick={this.toggleDialog }
+                                onClick={ () => {this.pageNavigate( '/Apply')} }
                             >
                                 <Typography  variant="h5">
                                     Click Here To Apply
@@ -168,7 +160,6 @@ pageNavigate( pageRoute ){
 
             <div >
                 {display}
-                <ApplyDialog isOpen={this.state.isOpen} toggle={this.toggleDialog}/>
             </div>
         );
     }
