@@ -14,7 +14,9 @@
     @media (min-width: 1200px) and (orientation:landscape) { @content; }
   }
 
-
+body{
+  background-color: #EBE9DE;
+}
   .background{
     background-image: url(./images/Background.jpg);
     position: fixed;
@@ -61,7 +63,7 @@
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-around;
-      background-color:rgb(221, 221, 221);
+      background-color:#DDDDDD;
       padding:2vh 4vh 2vh 4vh;
       color:rgb(8, 59, 102);
     
@@ -126,11 +128,20 @@
 .containerMargin{
   margin-top:10vh
 }
+.description{
+  padding-left:2vw !important;
+  padding: 2vw 0vw 1vw 0vw
+}
 .nested{
   padding-Left:4vw !important;
 }
 .cardSpacing{
   margin-top: 4vh
+}
+.azFab{
+  position: fixed !important;
+  bottom: 5vh;
+  right: 2.5vh
 }
 
 @include for-phone-only-portrait{

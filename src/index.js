@@ -13,13 +13,13 @@ import './index.css';
 import ScrollToTop                           from './scrollToTop';
 import Header                           from './Components/Common/Header';
 import Footer                           from './Components/Common/Footer';
-import Home                               from './Components/home';
-import About                               from './Components/About';
-import Loans                               from './Components/Loans';
-import Apply                               from './Components/Apply';
-import Glossary                              from './Components/Glossary';
-import PrivacyPolicy                               from './Components/PrivacyPolicy';
-import TermsOfUse                               from './Components/TermsOfUse';
+import Home                               from './pages/home';
+import About                               from './pages/About';
+import Loans                               from './pages/Loans';
+import Apply                               from './pages/Apply';
+import Glossary                              from './pages/Glossary';
+import PrivacyPolicy                               from './pages/PrivacyPolicy';
+import TermsOfUse                               from './pages/TermsOfUse';
 
 
 
