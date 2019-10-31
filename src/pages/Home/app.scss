@@ -14,11 +14,12 @@
     @media (min-width: 1200px) and (orientation:landscape) { @content; }
   }
 
-body{
-  background-color: #EBE9DE;
-}
+$blue:rgb(8, 59, 102);
+$orange:rgb(232, 131, 2);
+$gray: rgb(194, 192, 192); 
+
   .background{
-    background-image: url(./images/Background.jpg);
+    background-image: url(../../images/Background.jpg);
     position: fixed;
     background-size: cover;
     background-position: 65% center;
@@ -27,15 +28,6 @@ body{
     height: 100vh;
     width: 100vw;
     z-index: -1
-}
-.appBar{
-  background-color:rgba(8, 59, 102,0.6) !important;
-}
-.headerLogo{
-  height:8vh;
-  width:10vw;
-  margin:.5vw;
-  margin-right: 2vw
 }
 .homeWrapper{
   z-index: 3;
@@ -53,55 +45,6 @@ body{
     text-align: center;
     justify-content: center;
 }
-.footer{
-    display: flex;
-    flex-direction: column;
-    margin-top:10vh;
-
-    .topfooter{
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: space-around;
-      background-color:#DDDDDD;
-      padding:2vh 4vh 2vh 4vh;
-      color:rgb(8, 59, 102);
-    
-      .topfooterinfo{
-        display:flex;
-        flex-direction: column;
-        justify-content: space-evenly; 
-        margin-right:5vh; 
-        img{
-          margin-top: 2vh;
-          width: 12vh
-        };
-        .equal{
-          margin-top: 2vh;
-          height:4vh;
-          width: 4vh
-        }
-      };
-      .link{
-        display: flex;
-        flex-direction: column;
-        color:rgb(8, 59, 102);
-      }
-    };
-    
-    
-    .bottomfooter{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color:rgb(232, 131, 2);
-      padding:1vh;
-      div{
-        color:white
-      }
-    }
-}
 .loadingView{
   margin-top: 50vh;
   width: 100vw;
@@ -110,38 +53,20 @@ body{
   flex-direction:column;
   align-items: center;
   .loadingCircle{
-    color:rgb(232, 131, 2) !important
+    color:$orange !important
   }
-}
-.hide{
-  visibility:hidden
 }
 .iframe{
   margin-top:4vh;
   width: 100vw;
   height: 100vh;
-  color:rgb(232, 131, 2)
+  color:$orange
 }
 .DialogAppBar{
-  background-color:rgb(8, 59, 102) !important
+  background-color:$blue !important
 }
 .containerMargin{
   margin-top:10vh
-}
-.description{
-  padding-left:2vw !important;
-  padding: 2vw 0vw 1vw 0vw
-}
-.nested{
-  padding-Left:4vw !important;
-}
-.cardSpacing{
-  margin-top: 4vh
-}
-.azFab{
-  position: fixed !important;
-  bottom: 5vh;
-  right: 2.5vh
 }
 
 @include for-phone-only-portrait{
@@ -150,13 +75,8 @@ body{
       position: absolute;
       left: 0; right: 0;
       top: 0; bottom: 0;
-        background: rgba(252, 252, 252, 0.6);
+        background: rgba($gray, 0.6);
       }
-    .appBar{
-      height:4vh !important;
-      position:absolute !important;
-      top:0 !important
-    }
     .logoWrapper{
       margin-top: 6vh;
         width: 100vw;
@@ -185,7 +105,7 @@ body{
         justify-content: space-evenly ;
     }
     .homePaper{
-        background-color: rgba(8, 59, 102, 0.89) !important;
+        background-color: $blue !important;
         margin-top: 3vh;
         border-radius: 10px;
     }
@@ -199,11 +119,11 @@ body{
     }
     .optionsImage{
         font-size: 70px;
-        color:rgb(194, 192, 192)
+        color:$gray
     }
     .optionsText{
         font-size: 28px;
-        color:#e88302;
+        color:$orange;
     }
     
 }
@@ -218,15 +138,6 @@ body{
 }
 .background::before {
     background: none
-}
-.appBar{
-  height:8vh !important;
-}
-.headerLogo{
-  height:5vh;
-  width:6vw;
-  margin:-3vw 0vw 1.5vw 0vw;
-  margin-right: 2vw;
 }
 .homeWrapper{
   z-index: 1;
@@ -247,14 +158,14 @@ body{
   justify-content: center;
   align-items:center;
   color:white !important;
-  background-color: rgba(8, 59, 102, 0.6);
+  background-color: rgba($blue, 0.6);
   margin-top: 1vh !important;
   width:65vw;
   height: 56vh;
   border-radius:10px
 }
 .applyButton{
-  background-color:#e88302 !important;
+  background-color:$orange !important;
   margin: 2vh 0vh 3vh 0vh !important;
   padding:0vw !important;
   height: 10vh;
@@ -271,11 +182,11 @@ body{
 }
 .optionsImage{
   font-size: 50px;
-  color:rgb(8, 59, 102)
+  color:$blue
 }
 .optionsText{
   font-size: 25px !important;
-  color: #e88302
+  color: $orange
 }
 .cardWrapper{
   width: 50vw;
@@ -299,10 +210,6 @@ body{
 .iframe{
   margin-top:8vh
 }
-.footer{
-  margin-top:0vh;
-}
-  
     
 }
 
@@ -316,15 +223,6 @@ body{
 }
 .background::before {
     background: none
-}
-.appBar{
-  height:6vh !important;
-}
-.headerLogo{
-  height:4vh;
-  width:14vw;
-  margin:1vw 0vw 1.5vw 0vw;
-  margin-right: 2vw
 }
 .homeWrapper{
   z-index: 1;
@@ -345,14 +243,14 @@ body{
   justify-content: center;
   align-items:center;
   color:white !important;
-  background-color: rgba(8, 59, 102, 0.6);
+  background-color: rgba($blue, 0.6);
   margin-top: 5vh !important;
   width:70vw;
   height: 37vh;
   border-radius:10px
 }
 .applyButton{
-  background-color:#e88302 !important;
+  background-color:$orange !important;
   margin-top: 2vh !important;
   padding:1vw !important;
   height:7vh;
@@ -369,11 +267,11 @@ body{
 }
 .optionsImage{
   font-size: 65px;
-  color:rgb(8, 59, 102)
+  color:$blue
 }
 .optionsText{
   font-size: 35px !important;
-  color: #e88302
+  color: $orange
 }
 .cardWrapper{
   width: 50vw;
@@ -394,23 +292,12 @@ body{
   justify-content: center;
   align-items: center
 }
-.footer{
-  margin-top:0vh;
-}
 .iframe{
   margin-top:6vh
 }
 }
 
 @include for-tablet-landscape-up{
-  .appBar{
-    height:8vh !important;
-  }
-  .headerLogo{
-    height:6vh;
-    width:12vw;
-    margin:.5vw 0vw 1vw 0vw;
-  }
   .welcome{
     width:60vw;
     height: 40vh;
@@ -434,22 +321,6 @@ body{
 
 
 @include for-desktop-up{
-  .appBar{
-    height:10vh !important;
-  }
-  .headerLogo{
-    width:12vw;
-    height:8vh;
-    &:hover{
-      &:before{
-        content: "";
-        position: absolute;
-        left: 0; right: 0;
-        top: 0; bottom: 0;
-        background: rgba(8, 59, 102, 0.1);
-      }
-    }
-  }
   .welcome{
     width:50vw;
   }
@@ -462,7 +333,7 @@ body{
         position: absolute;
         left: 0; right: 0;
         top: 0; bottom: 0;
-        background: rgba(8, 59, 102, 0.1);
+        background: rgba($blue, 0.1);
       }
     }
   }
@@ -473,7 +344,7 @@ body{
         position: absolute;
         left: 0; right: 0;
         top: 0; bottom: 0;
-        background: rgba(8, 59, 102, 0.1);
+        background: rgba($blue, 0.1);
       }
     }
   }

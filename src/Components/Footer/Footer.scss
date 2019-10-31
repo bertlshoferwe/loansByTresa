@@ -1,0 +1,161 @@
+@mixin for-phone-only-portrait {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-phone-only-landscape {
+    @media (min-width: 0px) and (orientation:landscape) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) and (orientation:portrait) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) and (orientation:landscape) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) and (orientation:landscape) { @content; }
+  }
+  
+  $blue:rgb(8, 59, 102);
+  $orange:rgb(232, 131, 2);
+  $gray: rgb(194, 192, 192); 
+  
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    .topfooter{
+      background-color:#DDDDDD;
+      color:$blue;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    
+      .topfooterinfo{
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        width:50vw;
+        margin: 3vh 0vw 3vh 0vw;
+      .licenseLogo{
+        display:flex;
+        flex-direction: column;
+        } 
+        img{
+          margin-top: 2vh; 
+          width: 12vh
+        };
+        .equal{
+          margin-top: 2vh;
+          height:4vh;
+          width: 4vh
+        }
+      };
+    };
+}
+    
+    
+    .bottomfooter{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color:$orange;
+      padding:1vh;
+      div{
+        color:white
+      }
+    }
+
+
+@include for-phone-only-portrait {
+  .footer{
+    margin-top:10vh;
+
+    .topfooter{
+      min-width:90vw;
+    
+      .topfooterinfo{
+        justify-content: space-around;
+        width:100%;
+        .Info{
+          max-width:50%;
+        }
+        img{
+          width: 12vh
+        };
+        .equal{
+          margin-top: 2vh;
+          height:4vh;
+          width: 4vh
+        }
+      };
+    };
+
+}
+}
+
+@include for-phone-only-landscape {
+  footer{
+    margin-top:0vh;
+    .topfooter{
+      .topfooterinfo{
+        .Info{
+          max-width:20%;
+        } 
+      };
+    };
+  }
+    
+}
+
+
+@include for-tablet-portrait-up {
+  footer{
+    margin-top:0vh;
+    .topfooter{    
+      .topfooterinfo{
+        .Info{
+          max-width:25%;
+        } 
+      };
+    };
+  }
+
+}
+
+
+@include for-tablet-landscape-up {
+  footer{
+    margin-top:0vh;
+    .topfooter{ 
+      display: flex;
+      flex-direction: row;   
+      .topfooterinfo{
+        .Info{
+          max-width:25%;
+        } 
+      };
+    };
+  }
+
+}
+
+
+@include for-desktop-up {
+  footer{
+    margin-top:0vh;
+    .topfooter{    
+      .topfooterinfo{
+        width:50%;
+        .Info{
+          max-width:25%;
+        } 
+      };
+    };
+  }
+
+}
+
+
+

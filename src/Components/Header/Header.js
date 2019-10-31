@@ -1,8 +1,8 @@
 import React, { Component }     from 'react';
 import { withRouter } from "react-router";
-import { AppBar, Toolbar, Typography, Link } from '@material-ui/core';
-import '../../app.scss'
+import { AppBar, ButtonBase, Toolbar, Typography, Link } from '@material-ui/core';
 import Logo from '../../images/Logo.png';
+import './Header.scss'
 
 class Header extends Component{ 
     constructor(props){
@@ -14,7 +14,7 @@ class Header extends Component{
         };
         this.pageTitle = this.pageTitle.bind(this)
         this.pageNavigate = this.pageNavigate.bind(this)
-    }
+    } 
     
     componentWillUnmount() {
         window.removeEventListener('resize', this.updateWindowDimensions);
@@ -89,21 +89,28 @@ class Header extends Component{
 
     render() {
 
-        const headerLogo= (window.innerWidth < 600)?<div>
+        const rightButtons= (window.innerWidth < 600)?<div>
                                                         
                                                     </div> 
                                         :
-                                            <Link href='#'  onClick={() => {this.pageNavigate('/')} } >
-                                                <img src={Logo} alt='logo' className='headerLogo' /> 
-                                            </Link> 
+                                           <div>
+                                               <ButtonBase focusRipple
+                                                    className='prequalButton'
+                                                    onClick={ () => {this.pageNavigate( '/Apply')} }
+                                                >
+                                                    <Typography  variant="h5">
+                                                        PreQualify Today
+                                                    </Typography>
+                                                </ButtonBase>
+                                           </div>  
 
         const header = <div >
                             <AppBar className='appBar' position="fixed">
-                            <Toolbar>
-                                {headerLogo}
-                                <Typography variant="h6" >
-                                    {this.state.location}
-                                </Typography>
+                            <Toolbar className='toolBar'> 
+                                <Link href='javascript:void(0);'  onClick={() => {this.pageNavigate('/')} } >
+                                    <img src={Logo} alt='logo' className='headerLogo' /> 
+                                </Link>
+                                {rightButtons}
                             </Toolbar>
                             </AppBar>
                         </div>

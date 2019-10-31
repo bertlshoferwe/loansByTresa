@@ -1,7 +1,7 @@
 import React, { Component }         from 'react';
-import {Terms}                      from '../terms';
+import {Terms}                      from '../../terms';
 import { Card, CardContent, Drawer, ListItem, Typography, Container, Fab }   from '@material-ui/core';
-
+import './Glossary.scss'
 
 class Glossary extends Component{ 
     constructor(props){
@@ -84,7 +84,7 @@ class Glossary extends Component{
                                                         })
 
                 const fabNav = <Fab className='azFab' onClick={this.openDrawer}>
-                                    <Typography variant='body2'>
+                                    <Typography variant='body1'>
                                         A-Z
                                     </Typography>
                                 </Fab>

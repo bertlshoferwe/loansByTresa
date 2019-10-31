@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router'
-import { } from '../Actions';
-import '../app.scss';
-import Logo from '../images/Logo.png';
+import { } from '../../Actions';
+import './app.scss';
+import Logo from '../../images/Logo.png';
 import { ButtonBase, Typography } from '@material-ui/core';
 
 class Home extends Component {
@@ -48,7 +48,7 @@ pageNavigate( pageRoute ){
             },
             {
                 id: 2,
-                title: 'Apply',
+                title: 'Pre-qualify',
                 icon: 'library_books',
                 route: '/Apply',
             },
@@ -75,13 +75,13 @@ pageNavigate( pageRoute ){
                 :
                 <div className='welcome'>
                     <Typography  variant='h1'> Welcome</Typography>
-                    <Typography  variant='h4'> Its easy to get started</Typography>
+                    <Typography  variant='h4'> Looking For A Fast Loan</Typography>
                     <ButtonBase focusRipple
                                 className='applyButton'
                                 onClick={ () => {this.pageNavigate( '/Apply')} }
                             >
                                 <Typography  variant="h5">
-                                    Click Here To Apply
+                                    Get PreQualified today
                                 </Typography>
                             </ButtonBase>
                 </div>;
@@ -104,7 +104,7 @@ pageNavigate( pageRoute ){
                             <ButtonBase
                                 focusRipple
                                 className='homeButton'
-                                href='#'
+                                href='javascript:void(0)'
                                 onClick={ () => {this.pageNavigate(card.route)} }
                             >
                                 <span>
@@ -127,7 +127,7 @@ pageNavigate( pageRoute ){
                             <ButtonBase
                                 focusRipple
                                 className='homeButton'
-                                href='#'
+                                href='javascript:void(0)'
                                 onClick={ () => {this.pageNavigate(card.route)} }
                             >
                                 <span>

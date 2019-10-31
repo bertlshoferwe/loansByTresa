@@ -1,4 +1,5 @@
 import React, { Component }     from 'react';
+import './Loans.scss'
 
 class Loans extends Component{ 
     constructor(props){

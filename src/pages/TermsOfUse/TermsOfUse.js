@@ -1,5 +1,6 @@
 import React, { Component }     from 'react';
 import { Container, Card, CardContent, Typography, List, ListItem, ListItemText } from '@material-ui/core';
+import './TermsOfUse.scss'
 
 class TermsOfUse extends Component{ 
     constructor(props){

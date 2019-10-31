@@ -1,0 +1,42 @@
+@mixin for-phone-only-portrait {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-phone-only-landscape {
+    @media (min-width: 0px) and (orientation:landscape) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) and (orientation:portrait) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) and (orientation:landscape) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) and (orientation:landscape) { @content; }
+  }
+
+  $blue:rgb(8, 59, 102);
+  $orange:rgb(232, 131, 2);
+  $gray: rgb(194, 192, 192); 
+  
+
+@include for-phone-only-portrait{
+
+}
+
+@include for-phone-only-landscape{
+    
+}
+
+@include for-tablet-portrait-up{
+
+}
+
+@include for-tablet-landscape-up{
+    
+}
+
+
+@include for-desktop-up{
+
+}
+

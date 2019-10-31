@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#f5f5f5
+  background-color: #EBE9DE;
 }
 .app-body{
   display: flex;

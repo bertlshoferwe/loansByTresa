@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Card, CardContent, Typography, List, ListItem, ListItemText, Link } from '@material-ui/core';
+import './PrivacyPolicy.scss'
 
 class PrivacyPolicy extends Component {
     constructor(props) {

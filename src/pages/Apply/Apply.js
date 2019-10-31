@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CircularProgress } from '@material-ui/core';
-import '../app.scss'
+import './Apply.scss'
 
 class Apply extends Component {
     constructor(props) {

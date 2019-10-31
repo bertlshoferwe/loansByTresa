@@ -1,0 +1,15 @@
+$blue:rgb(8, 59, 102);
+$orange:rgb(232, 131, 2);
+$gray: rgb(194, 192, 192); 
+
+.loadingView{
+    margin-top: 50vh;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    .loadingCircle{
+      color:$orange !important
+    }
+  }
