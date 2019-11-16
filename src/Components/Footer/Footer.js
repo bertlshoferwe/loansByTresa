@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { Typography, Link } from '@material-ui/core';
 import fairHouse from '../../images/fairHouse.png'
 import altius from '../../images/altius.png'
-import './Footer.scss'
+import './_Footer.scss'
 
 class Footer extends Component{ 
     constructor(props){
@@ -28,20 +28,24 @@ class Footer extends Component{
                 'firm': 'Altius Mortgage',
                 'nmlsr': '#192521',
                 'logo': altius,
-                'equalHouse':fairHouse
+                'address': '11925 South 700 East',
+                'address2':' Draper, UT, 84020',
+                'equalHouse':fairHouse,
             },
             'Contact':{
                 'number':'(801) 923 3166',
                 'fax': '(801) 384 0779',
-                'address': '11925 South 700 East',
-                'address2':' Draper, UT, 84020',
+                'serving1': 'Box Elder County, Cache County,',
+                'serving2': 'Weber County, Davis County,',
+                'serving3': ' and all of Utah',
                 'email': 'Loansbytresa@gmail.com'
             },
             
         }
 
 
-        const footer = <div className='footer'>
+        const footer = 
+        <div className='footer'>
 
                         <div className='topfooter'>
                             <div className='topfooterinfo'>
@@ -72,56 +76,22 @@ class Footer extends Component{
                                         {Info.Contact.fax}
                                     </Typography>
                                     <Typography variant="subtitle1" >
-                                        Address:
+                                        Serving Areas:
                                     </Typography>
                                     <Typography variant="subtitle2" >
-                                        {Info.Contact.address} <br/>
-                                        {Info.Contact.address2}
+                                        {Info.Contact.serving1}
                                     </Typography>
+                                    <Typography variant="subtitle2" >
+                                        {Info.Contact.serving2}
+                                    </Typography>
+                                    <Typography variant="subtitle2" >
+                                        {Info.Contact.serving3}
+                                    </Typography>
+                                    
                                 </div>
 
                                 <div className='Info'>
-                                    <h2 >
-                                        SITE_MAP 
-                                    </h2>
-                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('/')} } >
-                                        <Typography variant="subtitle1" >
-                                            Home
-                                        </Typography>
-                                    </Link>
-                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate( '/About' )} } >
-                                        <Typography variant="subtitle1" >
-                                        About
-                                        </Typography>
-                                    </Link>
-                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('/Loans')} } >
-                                        <Typography variant="subtitle1" >
-                                        Loans
-                                        </Typography>
-                                    </Link>
-                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate( '/Apply' )} }>
-                                        <Typography variant="subtitle1" >
-                                        Pre-qualify
-                                        </Typography>
-                                    </Link>
-                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('Privacy_Policy')} } >
-                                        <Typography variant="subtitle1" >
-                                        Privacy Policy
-                                        </Typography>
-                                    </Link>
-                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('Terms_Of_Use')} } >
-                                        <Typography variant="subtitle1" >
-                                        Terms of Use
-                                        </Typography>
-                                    </Link>
-                                </div>
-                                
-                            </div>
-
-
-                            <div className='topfooterinfo'>
-                                <div className='Info'>
-                                    <h2>
+                                <h2>
                                         LICENSING 
                                     </h2>
                                     <Typography variant="subtitle1" >
@@ -136,6 +106,13 @@ class Footer extends Component{
                                     <Typography variant="subtitle2" >
                                         {Info.Licensing.nmlsr} 
                                     </Typography>
+                                    <Typography variant="subtitle1" >
+                                        Address:
+                                    </Typography>
+                                    <Typography variant="subtitle2" >
+                                        {Info.Licensing.address} <br/>
+                                        {Info.Licensing.address2}
+                                    </Typography>
                                     
                                     <div className='licenseLogo' >
 
@@ -144,6 +121,52 @@ class Footer extends Component{
                                         <img src={Info.Licensing.equalHouse} className='equal' alt=' '/>
 
                                     </div>
+                                </div>
+                                
+                            </div>
+
+
+                            <div className='topfooterinfo'>
+                                <div className='Info'>
+                                <h2 >
+                                        SITE_MAP 
+                                    </h2>
+                                    {/* eslint-disable-next-line */}
+                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('/')} } >
+                                        <Typography variant="subtitle1" >
+                                            Home
+                                        </Typography>
+                                    </Link>
+                                    {/* eslint-disable-next-line */}
+                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate( '/About' )} } >
+                                        <Typography variant="subtitle1" >
+                                        About
+                                        </Typography>
+                                    </Link>
+                                    {/* eslint-disable-next-line */}
+                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('/Loans')} } >
+                                        <Typography variant="subtitle1" >
+                                        Loans
+                                        </Typography>
+                                    </Link>
+                                    {/* eslint-disable-next-line */}
+                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate( '/Apply' )} }>
+                                        <Typography variant="subtitle1" >
+                                        Pre-qualify
+                                        </Typography>
+                                    </Link>
+                                    {/* eslint-disable-next-line */}
+                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('Privacy_Policy')} } >
+                                        <Typography variant="subtitle1" >
+                                        Privacy Policy
+                                        </Typography>
+                                    </Link>
+                                    {/* eslint-disable-next-line */}
+                                    <Link href="javascript:void(0);" onClick={() => {this.pageNavigate('Terms_Of_Use')} } >
+                                        <Typography variant="subtitle1" >
+                                        Terms of Use
+                                        </Typography>
+                                    </Link>
                                     
                                 </div>
 

@@ -1,16 +1,11 @@
-import React, { Component }               from 'react';
+import React, { Component, Fragment }               from 'react';
+import ScrollToTop from 'react-router-scroll-top'
 import ReactDOM                           from 'react-dom';
-import {Provider}                         from 'react-redux';
 import { Route, Switch }                  from 'react-router'
-import { ConnectedRouter }                from 'connected-react-router'
-import { createStore, compose, applyMiddleware } from 'redux';
+import { Router } from "react-router-dom";
 import { createBrowserHistory }           from 'history'
-import { connectRouter, routerMiddleware } from 'connected-react-router'
-import thunk                                from 'redux-thunk';
-import Reducers                           from './Reducers';
 import * as serviceWorker              from './serviceWorker';
 import './index.css';
-import ScrollToTop                           from './scrollToTop';
 import Header                           from './Components/Header/Header';
 import Footer                           from './Components/Footer/Footer';
 import Home                               from './pages/Home/home';
@@ -25,19 +20,6 @@ import TermsOfUse                               from './pages/TermsOfUse/TermsOf
 
 const history = createBrowserHistory()
 
-const initialState = {};
-
-const store = createStore(
-  connectRouter(history)(Reducers),
-    initialState,
-    compose(
-      applyMiddleware(
-        routerMiddleware(history),
-        thunk
-      ),
-  ),
-)
-
 class App extends Component {
   state = {
 
@@ -46,14 +28,13 @@ class App extends Component {
   render(){
     
     return ( 
-          <Provider store={store}>
-              <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)}  history={history}>
+              <Router onUpdate={() => window.scrollTo(0, 0)}  history={history}>
                 <ScrollToTop>
-                  <div className='app-body'>
+                  <Fragment>
 
                       <Header/>
 
-                      <div className='app-content'>
+                      
                           <Switch>
                               <Route exact path="/" component={Home} />
                               <Route path="/About" component={About} />
@@ -64,13 +45,12 @@ class App extends Component {
                               <Route path="/Terms_Of_Use" component={TermsOfUse} />
                                             
                           </Switch>
-                      </div>
                       
                      <Footer />
-                  </div>    
-                </ScrollToTop>
-              </ConnectedRouter>
-          </Provider>
+                      
+                   </Fragment> 
+                </ScrollToTop> 
+              </Router>
     );
   }
 } 

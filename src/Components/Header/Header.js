@@ -2,7 +2,7 @@ import React, { Component }     from 'react';
 import { withRouter } from "react-router";
 import { AppBar, ButtonBase, Toolbar, Typography, Link } from '@material-ui/core';
 import Logo from '../../images/Logo.png';
-import './Header.scss'
+import './_Header.scss'
 
 class Header extends Component{ 
     constructor(props){
@@ -12,7 +12,7 @@ class Header extends Component{
             location:'',
             Width:''
         };
-        this.pageTitle = this.pageTitle.bind(this)
+
         this.pageNavigate = this.pageNavigate.bind(this)
     } 
     
@@ -25,60 +25,19 @@ class Header extends Component{
     }
 
     shouldComponentUpdate(nextProps) {
-        return this.props.location.pathname !== this.state.pathname
+        
+        return nextProps.location.pathname !== this.state.pathname
+       
     };
-
     componentDidUpdate() {
         this.pageTitle()
+       
     };
 
-
     pageTitle() {
-        switch(this.props.location.pathname){
-            case '/':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location:null
-                })
-            break;
-            case '/About':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'About'
-                })
-            break;
-            case '/Loans':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Loans'
-                })
-            break;
-            case '/Apply':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Apply'
-                })
-            break;
-            case '/Glossary':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Glossary'
-                })
-            break;
-            case '/Privacy_Policy':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Privacy Policy'
-                })
-            break;
-            case '/Terms_Of_Use':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Terms Of Use'
-                })
-            break;
-            default:
-        }
+        this.setState({
+            pathname:this.props.location.pathname
+        })
     }
 
     pageNavigate( pageRoute ){
@@ -89,17 +48,17 @@ class Header extends Component{
 
     render() {
 
-        const rightButtons= (window.innerWidth < 600)?<div>
+    const prequalFlag= (this.state.pathname === '/' || this.state.pathname === '/Apply' )?<div>
                                                         
                                                     </div> 
                                         :
-                                           <div>
+                                           <div className='flag' >
                                                <ButtonBase focusRipple
                                                     className='prequalButton'
                                                     onClick={ () => {this.pageNavigate( '/Apply')} }
                                                 >
-                                                    <Typography  variant="h5">
-                                                        PreQualify Today
+                                                    <Typography  variant="subtitle2">
+                                                        Pre-Qualify Today
                                                     </Typography>
                                                 </ButtonBase>
                                            </div>  
@@ -107,11 +66,12 @@ class Header extends Component{
         const header = <div >
                             <AppBar className='appBar' position="fixed">
                             <Toolbar className='toolBar'> 
-                                <Link href='javascript:void(0);'  onClick={() => {this.pageNavigate('/')} } >
+                            {/* eslint-disable-next-line */}
+                                <Link href='javascript:void(0);' className='headerLogoWrapper' onClick={() => {this.pageNavigate('/')} } >
                                     <img src={Logo} alt='logo' className='headerLogo' /> 
                                 </Link>
-                                {rightButtons}
                             </Toolbar>
+                                {prequalFlag}
                             </AppBar>
                         </div>
                            

@@ -1,0 +1,194 @@
+@import '../Home/app';   
+  .aboutWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .logosWrapper{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      .vertical-line{
+        background-color: $blue;
+      }
+    }
+    .aboutBody{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+@include for-phone-only-portrait{
+  .aboutWrapper{
+    padding:1vh 8vw 5vh 8vw;
+    .logosWrapper{
+      margin: 1vh 0vw 3vh 0vw;
+      .logo{
+        width: 30vw;
+        height:6vh
+      }
+      .vertical-line{
+        width: 2px;
+        height: 4.5vh;
+        margin: 0vh 2vw 0vh 2vw
+      }
+      .altiusLogo{
+        width:35vw;
+        height:6vh
+      }
+    }  
+    .aboutBody{
+      .profileImg{
+        width: 100%
+      }
+      .bodyTextWrapper{
+        margin-top: 5vh;
+        width: 100%;
+        .bodyText{
+          margin: 1vh 0vw 2vh 0vw;
+        }
+      }
+    }
+  }
+
+}
+
+@include for-phone-only-landscape{
+  .aboutWrapper{
+    padding:1vh 8vw 5vh 8vw;
+    .logosWrapper{
+      margin: 1vh 0vw 3vh 0vw;
+      .logo{
+        width: 20vw;
+        height: 20vh
+      }
+      .vertical-line{
+        width: 4px;
+        height: 19.5vh;
+        margin: 0vh 2vw 0vh 2vw
+      }
+      .altiusLogo{
+        width: 25vw;
+        height:20vh
+      }
+    }  
+    .aboutBody{
+      .profileImg{
+        margin: 4vh auto 0vh auto;
+        height: 100vh;
+        width: auto;
+      }
+      .bodyTextWrapper{
+        margin-top: 5vh;
+        width: 100%;
+        .bodyText{
+          margin: 1vh 0vw 2vh 0vw;
+        }
+      }
+    }
+  }
+    
+}
+
+@include for-tablet-portrait-up{
+  .aboutWrapper{
+    padding:1vh 8vw 5vh 8vw;
+    .logosWrapper{
+      margin: 1vh 0vw 3vh 0vw;
+      .logo{
+        width: 20vw;
+        height: 10vh
+      }
+      .vertical-line{
+        width: 4px;
+        height: 8.5vh;
+        margin: 0vh 2vw 0vh 2vw
+      }
+      .altiusLogo{
+        width: 25vw;
+        height:9vh
+      }
+    }  
+    .aboutBody{
+      .profileImg{
+        margin: 4vh auto 0vh auto;
+        height: auto;
+        width: 70%;
+      }
+      .bodyTextWrapper{
+        margin-top: 5vh;
+        width: 100%;
+        .bodyText{
+          margin: 1vh 0vw 2vh 0vw;
+        }
+      }
+    }
+  }
+
+}
+
+@include for-tablet-landscape-up{
+  .aboutWrapper{
+    padding:1vh 4vw 5vh 4vw;
+    .logosWrapper{
+      margin: 1vh 0vw 3vh 0vw;
+      .logo{
+        width: 20vw;
+        height: 10vh
+      }
+      .vertical-line{
+        width: 4px;
+        height: 8.5vh;
+        margin: 0vh 2vw 0vh 2vw
+      }
+      .altiusLogo{
+        width: 25vw;
+        height:9vh
+      }
+    }  
+    .aboutBody{
+      flex-direction: row;
+      justify-content: space-between;
+      .profileImg{
+        margin: 4vh ;
+        height: auto;
+        width: 30vw;
+      }
+      .bodyTextWrapper{
+        margin-top: 4vh;
+        width: 50vw;
+        .bodyText{
+          margin: 0vh 0vw 2vh 0vw;
+        }
+      }
+    }
+  }
+}
+
+
+@include for-desktop-up{
+  .containerMargin{
+    margin-top:15vh !important;
+  }
+  .aboutWrapper{
+    padding:1vh 4vw 5vh 4vw;
+    .logosWrapper{
+      margin: 1vh 0vw 3vh 0vw;
+      .logo{
+        width: 18vw;
+        height: 12vh
+      }
+      .vertical-line{
+        width: 4px;
+        height: 8.5vh;
+        margin: 0vh 2vw 0vh 2vw
+      }
+      .altiusLogo{
+        width: 25vw;
+        height:9vh
+      }
+    }  
+  }
+}
+

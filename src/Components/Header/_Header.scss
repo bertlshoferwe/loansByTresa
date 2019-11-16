@@ -1,0 +1,150 @@
+@import '../../pages/Home/app';
+
+.appBar{
+  background-color:rgba(8, 59, 102,0.6) !important;
+  width: 100vw !important;
+}
+.toolBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.headerLogo{
+  height:auto;
+  width:10vw;
+  margin:.5vw;
+  margin-right: 2vw
+}
+.flag{
+  display:block;
+  background:$orange;
+  position: absolute;
+  top: 0;
+  padding-top: 10px;
+  &:after {
+    content:"";
+    display:block;
+    position:relative;
+    border-style:solid;
+    border-color:$orange $orange transparent $orange;
+  }
+}
+
+@include for-phone-only-portrait{
+    .appBar{
+      height:6vh !important;
+      position:fixed !important;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .headerLogo{
+      width:15vw;
+    }
+    .flag{
+      width:100px;
+      height:45px;
+      right: 10vw;
+      &:after {
+        content:"";
+        top:0;
+        width:0;
+        height:0;
+        border-width:5px 50px 30px 50px;
+      }
+      
+    }
+}
+
+
+
+@include for-phone-only-landscape{
+.appBar{
+  height:8vh !important;
+}
+.headerLogo{
+  width:5vw;
+  margin:-2vw 0vw 1.5vw 0vw;
+}
+.flag{
+  width:100px;
+  height:55px;
+  right: 10vw;
+  &:after {
+    content:"";
+    top:10px;
+    width:0;
+    height:0;
+    border-width:5px 50px 30px 50px;
+  }
+  
+  }    
+}
+
+@include for-tablet-portrait-up{
+.appBar{
+  height:6vh !important;
+}
+.headerLogo{
+  width:11vw;
+}
+.flag{
+  width:100px;
+  height:70px;
+  right: 10vw;
+  &:after {
+    content:"";
+    top:25px;
+    width:0;
+    height:0;
+    border-width:5px 50px 30px 50px;
+  }
+  
+  }   
+}
+
+@include for-tablet-landscape-up{
+  .appBar{
+    height:8vh !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .headerLogo{
+    width:8vw;
+    margin:.5vw 0vw 1vw 0vw;
+  }
+  .flag{
+    right: 12vw;
+    
+    }   
+    
+}
+
+
+@include for-desktop-up{
+  .appBar{
+    height:10vh !important;
+  }
+  .headerLogo{
+    width:7vw;
+    &:hover{
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background: rgba($blue, 0.1);
+      }
+    }
+  } 
+  .flag{
+    right: 10vw;
+    height:80px;
+    padding-top: 20px;
+    &:after {
+      top:35px;
+    }
+    }   
+}
+

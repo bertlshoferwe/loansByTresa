@@ -1,6 +1,6 @@
 import React, { Component }     from 'react';
 import { Container, Card, CardContent, Typography, List, ListItem, ListItemText } from '@material-ui/core';
-import './TermsOfUse.scss'
+import './_TermsOfUse.scss'
 
 class TermsOfUse extends Component{ 
     constructor(props){
@@ -12,12 +12,11 @@ class TermsOfUse extends Component{
     render() {
 
         let TermsOfUse = <div> 
+                        <Typography variant="h2" className='pageTitle'>
+                            Terms Of Use
+                        </Typography>
                         <Card className='cardSpacing' >
                             <CardContent>
-
-                                <Typography variant="h2">
-                                    Terms Of Use
-                                </Typography>
 
                                 <List >
 
@@ -161,7 +160,7 @@ class TermsOfUse extends Component{
          
 
         return(
-            <Container className='containerMargin'>
+            <Container maxWidth="md" className='containerMargin'>
             
                     {TermsOfUse}
 

@@ -24,14 +24,20 @@ $gray: rgb(194, 192, 192);
     background-size: cover;
     background-position: 65% center;
     background-repeat: no-repeat;
+    overflow:hidden;
     filter:blur(2px);
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     z-index: -1
+}
+.pageTitle{
+  margin-top: 12vh !important;
+  margin-bottom: 4vh !important;
+  color: $blue
 }
 .homeWrapper{
   z-index: 3;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -39,8 +45,8 @@ $gray: rgb(194, 192, 192);
 }
 .logoWrapper{
   margin-top: 10vh;
-    width: 100vw;
-    height: auto;
+    width: 100%;
+    height: auto; 
     display: flex;
     text-align: center;
     justify-content: center;
@@ -58,15 +64,17 @@ $gray: rgb(194, 192, 192);
 }
 .iframe{
   margin-top:4vh;
-  width: 100vw;
+  width: 99.7%;
   height: 100vh;
-  color:$orange
+  color:$orange;
+  overflow: hidden;
+
 }
 .DialogAppBar{
   background-color:$blue !important
 }
 .containerMargin{
-  margin-top:10vh
+  margin-top:10vh 
 }
 
 @include for-phone-only-portrait{
@@ -77,9 +85,13 @@ $gray: rgb(194, 192, 192);
       top: 0; bottom: 0;
         background: rgba($gray, 0.6);
       }
+      .pageTitle{
+        margin-left: 5vw !important;
+        max-width: 50vw !important;
+      }
     .logoWrapper{
       margin-top: 6vh;
-        width: 100vw;
+        width: 100%;
         height: auto;
         display: flex;
         text-align: center;
@@ -91,14 +103,14 @@ $gray: rgb(194, 192, 192);
     }
     .optionsWrapper{
         margin-top: 2vh;
-        width: 100vw;
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly ;
     }
     .cardWrapper{
-        width: 100vw;
+        width: 100%;
         display: flex;
         flex-wrap:wrap;
         flex-direction: row;
@@ -125,6 +137,10 @@ $gray: rgb(194, 192, 192);
         font-size: 28px;
         color:$orange;
     }
+    .iframe{
+      margin-top:6vh;
+      margin-bottom:-10vh
+    }
     
 }
 
@@ -139,9 +155,13 @@ $gray: rgb(194, 192, 192);
 .background::before {
     background: none
 }
+.pageTitle{
+  margin-left: 2vw !important;
+  max-width: 75vw;
+}
 .homeWrapper{
   z-index: 1;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -149,7 +169,7 @@ $gray: rgb(194, 192, 192);
 }
 .logoWrapper{
   margin-top:9vh;
-  width:100vw;
+  width:100%;
   height: 66vh
 }
 .welcome{
@@ -173,12 +193,15 @@ $gray: rgb(194, 192, 192);
   border-radius:6px !important;
 }
 .optionsWrapper{
-  width: 100vw;
-  height: 33vh;
+  width: 100%;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly ;
+}
+.homePaper{
+  width:50%
 }
 .optionsImage{
   font-size: 50px;
@@ -189,7 +212,7 @@ $gray: rgb(194, 192, 192);
   color: $orange
 }
 .cardWrapper{
-  width: 50vw;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-wrap:wrap;
@@ -208,7 +231,7 @@ $gray: rgb(194, 192, 192);
   align-items: center;
 }
 .iframe{
-  margin-top:8vh
+  margin-top:8vh;
 }
     
 }
@@ -218,15 +241,18 @@ $gray: rgb(194, 192, 192);
 @include for-tablet-portrait-up{
 .background{
     background-position:  center;
-    background-size: auto 100vh;
+    background-size: auto 100%;
     filter:blur(0px);
 }
 .background::before {
     background: none
 }
+.pageTitle{
+  margin-left: 2vw !important;
+}
 .homeWrapper{
   z-index: 1;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -234,7 +260,7 @@ $gray: rgb(194, 192, 192);
 }
 .logoWrapper{
   margin-top:15vh;
-  width:100vw;
+  width:100%;
   height: 66vh
 }
 .welcome{
@@ -253,13 +279,13 @@ $gray: rgb(194, 192, 192);
   background-color:$orange !important;
   margin-top: 2vh !important;
   padding:1vw !important;
-  height:7vh;
-  width: 37vw;
+  height:5vh;
+  width: 30vw;
   border-radius:6px !important
 }
 .optionsWrapper{
-  width: 100vw;
-  height: 33vh;
+  width: 100%;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -274,7 +300,7 @@ $gray: rgb(194, 192, 192);
   color: $orange
 }
 .cardWrapper{
-  width: 50vw;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-wrap:wrap;
@@ -306,6 +332,12 @@ $gray: rgb(194, 192, 192);
   .applyButton{
     height:6vh;
     width: 25vw;
+  }
+  .optionsWrapper{
+    width:100%;
+  }
+  .homePaper{
+    width:50%
   }
   .optionsImage{
     font-size: 65px;
@@ -348,9 +380,15 @@ $gray: rgb(194, 192, 192);
       }
     }
   }
-  .optionsImage{
-    font-size: 75px;
+  .optionsWrapper{
+    width:100%;
   }
+  // .homePaper{
+  //   width:50%
+  // }
+  // .optionsImage{
+  //   font-size: 75px;
+  // }
   .optionsText{
     font-size: 45px !important;
   }

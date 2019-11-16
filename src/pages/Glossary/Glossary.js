@@ -1,7 +1,8 @@
 import React, { Component }         from 'react';
 import {Terms}                      from '../../terms';
-import { Card, CardContent, Drawer, ListItem, Typography, Container, Fab }   from '@material-ui/core';
-import './Glossary.scss'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { Card, CardContent, Drawer, Link, List, ListItem, Typography, Container, Fab }   from '@material-ui/core';
+import './_Glossary.scss'
 
 class Glossary extends Component{ 
     constructor(props){
@@ -13,30 +14,22 @@ class Glossary extends Component{
 
         this.closeDrawer = this.closeDrawer.bind(this)
         this.openDrawer = this.openDrawer.bind(this)
-        this.scrollToView = this.scrollToView.bind(this)
+        // this.scrollToView = this.scrollToView.bind(this)
 
     }
+
 
     closeDrawer() {
         this.setState({
             isDrawerOpen: false
         })
-    }
+    };
 
     openDrawer() {
         this.setState({
             isDrawerOpen: true
         })
-    }
-
-    scrollToView( id ) {        
-
-        this.refs[id].scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center',
-        });
-    }
-
+    };
 
 
     render() {
@@ -51,13 +44,8 @@ class Glossary extends Component{
             const upperCase = String.fromCharCode(65 + i)
 
             alphabet.push(
-                <ListItem button key={i} onClick={() => {
-                        this.scrollToView( lowerCase );
-                        this.closeDrawer();
-                    } }>
-                    
-                        { upperCase }
-                    
+                <ListItem button key={i} onClick={()=>{this.closeDrawer()}} >
+                    <AnchorLink className='links' offset='200' href={'#'+lowerCase}>{ upperCase}</AnchorLink>
                 </ListItem>
                 )
           
@@ -84,7 +72,7 @@ class Glossary extends Component{
                                                         })
 
                 const fabNav = <Fab className='azFab' onClick={this.openDrawer}>
-                                    <Typography variant='body1'>
+                                    <Typography variant='h6'>
                                         A-Z
                                     </Typography>
                                 </Fab>
@@ -96,12 +84,16 @@ class Glossary extends Component{
                                         onClose={this.closeDrawer}
                                         
                                         >
-                                            {alphabet}
+                                            <List >
+                                                {alphabet}
+                                            </List>
                                     </Drawer>
 
         return(
             <Container className='containerMargin' maxWidth="md" >
-                    
+                        <Typography variant="h2" className='pageTitle'>
+                            Glossary
+                        </Typography>
                     {termCard}
                     {fabNav}
                     {alphaDrawer}

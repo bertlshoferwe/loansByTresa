@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { CircularProgress } from '@material-ui/core';
-import './Apply.scss'
+import './_Apply.scss'
 
 class Apply extends Component {
     constructor(props) {
@@ -32,19 +32,19 @@ render() {
                                             :
                                             null
 
-    const dialog = <div>
+    const dialog = <Fragment>
                             {loadingView}
                             <iframe onLoad={this.hideSpinner} src='https://www.blink.mortgage/app/signup/p/altiusmortgagegroup/tresabertlshofer' title='Apply For Loan' className={ (this.state.loading === true)? 'hide' : 'iframe'}/>
 
-                    </div>
+                    </Fragment>
 
 
     return (
-        <div>
+        <Fragment>
             
             {dialog}
 
-        </div>
+        </Fragment>
     );
 }
 }

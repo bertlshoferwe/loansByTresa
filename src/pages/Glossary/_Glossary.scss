@@ -1,0 +1,64 @@
+  @import '../Home/app'; 
+
+
+.description{
+  padding-left:2vw !important;
+  padding: 2vw 0vw 1vw 0vw
+}
+.nested{
+  padding-Left:4vw !important;
+}
+.cardSpacing{
+  margin: 4vh 0vh 4vh 0vh !important
+}
+.azFab{
+  position: fixed !important;
+  bottom: 5vh;
+  right: 2.5vh;
+  color: $orange !important;
+  background-color: $blue !important;
+}
+.links{
+  text-decoration: none !important;
+  color:$blue;
+  &:hover{
+    text-decoration: none !important;
+    color:$blue;
+  }
+  &:visited{
+    text-decoration: none !important;
+    color:$blue;
+  }
+  &:active{
+    text-decoration: none !important;
+    color:$blue;
+  }
+  &:link{
+    text-decoration: none !important;
+    color:$blue;
+  }
+}
+
+@include for-phone-only-portrait{
+
+}
+
+
+
+@include for-phone-only-landscape{
+    
+}
+
+@include for-tablet-portrait-up{
+
+}
+
+@include for-tablet-landscape-up{
+    
+}
+
+
+@include for-desktop-up{
+
+}
+

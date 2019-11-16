@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Card, CardContent, Typography, List, ListItem, ListItemText, Link } from '@material-ui/core';
-import './PrivacyPolicy.scss'
+import './_PrivacyPolicy.scss'
 
 class PrivacyPolicy extends Component {
     constructor(props) {
@@ -12,12 +12,12 @@ class PrivacyPolicy extends Component {
     render() {
 
         let Display = <div>
+                        <Typography variant="h2" className='pageTitle'>
+                            Privacy Policy
+                        </Typography>
+
                         <Card className='cardSpacing' >
                             <CardContent>
-
-                                <Typography variant="h2">
-                                    Privacy Policy
-                                </Typography>
 
                                 <List >
 
@@ -312,7 +312,7 @@ class PrivacyPolicy extends Component {
 </div>
 
         return (
-            <Container maxWidth="xl" className='containerMargin' >
+            <Container maxWidth="md" className='containerMargin' >
 
                 {Display}
 

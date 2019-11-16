@@ -1,28 +1,10 @@
-@mixin for-phone-only-portrait {
-    @media (max-width: 599px) { @content; }
-  }
-  @mixin for-phone-only-landscape {
-    @media (min-width: 0px) and (orientation:landscape) { @content; }
-  }
-  @mixin for-tablet-portrait-up {
-    @media (min-width: 600px) and (orientation:portrait) { @content; }
-  }
-  @mixin for-tablet-landscape-up {
-    @media (min-width: 900px) and (orientation:landscape) { @content; }
-  }
-  @mixin for-desktop-up {
-    @media (min-width: 1200px) and (orientation:landscape) { @content; }
-  }
-  
-  $blue:rgb(8, 59, 102);
-  $orange:rgb(232, 131, 2);
-  $gray: rgb(194, 192, 192); 
+  @import '../../pages/Home/app';
   
 
 .footer{
-    display: flex;
-    flex-direction: column;
-    width:100vw;
+    width:100%;
+    margin:0;
+    padding:0;
     .topfooter{
       background-color:#DDDDDD;
       color:$blue;
@@ -35,8 +17,12 @@
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-around;
-        width:50vw;
+        width:50%;
         margin: 3vh 0vw 3vh 0vw;
+        .serving{
+          display:flex;
+          flex-wrap: wrap;
+        }
       .licenseLogo{
         display:flex;
         flex-direction: column;
@@ -53,7 +39,7 @@
       };
     };
 }
-    
+
     
     .bottomfooter{
       display: flex;
@@ -79,7 +65,7 @@
         justify-content: space-around;
         width:100%;
         .Info{
-          max-width:50%;
+          max-width:50% !important;
         }
         img{
           width: 12vh
@@ -101,7 +87,7 @@
     .topfooter{
       .topfooterinfo{
         .Info{
-          max-width:20%;
+          max-width:20% !important;
         } 
       };
     };
@@ -116,7 +102,7 @@
     .topfooter{    
       .topfooterinfo{
         .Info{
-          max-width:25%;
+          max-width:25% !important;
         } 
       };
     };
@@ -133,7 +119,7 @@
       flex-direction: row;   
       .topfooterinfo{
         .Info{
-          max-width:25%;
+          max-width:25% !important;
         } 
       };
     };
@@ -147,9 +133,9 @@
     margin-top:0vh;
     .topfooter{    
       .topfooterinfo{
-        width:50%;
+        width:100%;
         .Info{
-          max-width:25%;
+          max-width:20% !important;
         } 
       };
     };

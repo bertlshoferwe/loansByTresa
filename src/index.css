@@ -1,16 +1,18 @@
 body {
   margin: 0;
   padding: 0;
+  width:100%;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #EBE9DE;
+  overflow-x: hidden;
 }
 .app-body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 100%;
 }
 .app-content{
   flex: 1 0 auto;

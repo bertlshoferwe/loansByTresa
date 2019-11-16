@@ -8405,6 +8405,11 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-anchor-link-smooth-scroll@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/react-anchor-link-smooth-scroll/-/react-anchor-link-smooth-scroll-1.0.12.tgz#5cd49c73e74be6d20b4c05a5e5c72d07ebbedac7"
+  integrity sha512-aaY+9X0yh8YnC0jBfoTKpsiCLdO/Y6pCltww+VB+NnTBPDOvnIdnp1AlazajsDitc1j+cVSQ+yNtaVeTIMQbxw==
+
 react-app-polyfill@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-1.0.1.tgz#809a858e44f9564c7f4205e173076f90048274f1"
@@ -8511,6 +8516,11 @@ react-router-redux@^4.0.0:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
   integrity sha1-InQDWWtRUeGCN32rg1tdRfD4BU4=
+
+react-router-scroll-top@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/react-router-scroll-top/-/react-router-scroll-top-0.2.1.tgz#7fc28b9636d64b2d42a24b5b64eb4bd4219a672b"
+  integrity sha512-rseL7IqA9wt1R/QIGbTFsO5O1bIXmd0f+W208rKsAYjedSrNCsu3Q8yLJZtBmdESakfAZJRGw5A6FJwRkbvQ+A==
 
 react-router@^4.2.0, react-router@^4.3.1:
   version "4.3.1"

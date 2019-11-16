@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router'
-import { } from '../../Actions';
-import './app.scss';
+import './_app.scss';
 import Logo from '../../images/Logo.png';
 import { ButtonBase, Typography } from '@material-ui/core';
 
@@ -33,9 +31,11 @@ updateWindowDimensions() {
 
 
 pageNavigate( pageRoute ){
+
     this.props.history.push({
         pathname: pageRoute,
-    })}
+    })
+}
 
 
     render() {
@@ -48,7 +48,7 @@ pageNavigate( pageRoute ){
             },
             {
                 id: 2,
-                title: 'Pre-qualify',
+                title: 'Apply',
                 icon: 'library_books',
                 route: '/Apply',
             },
@@ -80,15 +80,15 @@ pageNavigate( pageRoute ){
                                 className='applyButton'
                                 onClick={ () => {this.pageNavigate( '/Apply')} }
                             >
-                                <Typography  variant="h5">
-                                    Get PreQualified today
+                                <Typography  variant='h6' >
+                                    Get Pre-Qualified today
                                 </Typography>
                             </ButtonBase>
                 </div>;
 
 
 
-        let display = <div>
+        let display = <Fragment>
 
             <div className='background' />
 
@@ -104,6 +104,7 @@ pageNavigate( pageRoute ){
                             <ButtonBase
                                 focusRipple
                                 className='homeButton'
+                                // eslint-disable-next-line 
                                 href='javascript:void(0)'
                                 onClick={ () => {this.pageNavigate(card.route)} }
                             >
@@ -127,6 +128,7 @@ pageNavigate( pageRoute ){
                             <ButtonBase
                                 focusRipple
                                 className='homeButton'
+                                // eslint-disable-next-line 
                                 href='javascript:void(0)'
                                 onClick={ () => {this.pageNavigate(card.route)} }
                             >
@@ -147,32 +149,32 @@ pageNavigate( pageRoute ){
 
             </div>
 
-        </div>
+        </Fragment>
 
 
 
 
         return (
 
-            <div >
+            <Fragment>
                 {display}
-            </div>
+            </Fragment>
         );
     }
 }
 
 // connections to Redux
-const mapStateToProps = state => {
+// const mapStateToProps = state => {
 
 
-    return {};
-}
+//     return {};
+// }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
+// const mapDispatchToProps = (dispatch) => {
+//     return {
 
-    };
-};
+//     };
+// };
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home))
+export default withRouter(Home)

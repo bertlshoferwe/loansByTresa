@@ -1,0 +1,122 @@
+@import '../Home/app'; 
+
+.tabTitle{
+    color: $blue;
+    margin: 2vh 0vw 2vh 2vw !important;
+}
+.tableWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.table{
+    border-color: $gray;
+    width:40vw !important;
+}
+
+@include for-phone-only-portrait{
+
+} 
+
+@include for-phone-only-landscape{
+    .pageDirection{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .tabContent{
+        width:55vw;
+        height: auto;
+        margin-top: 15vh !important;
+    }
+    .tabList{
+        display: flex;
+        flex-direction: column ;
+        justify-content: space-around;
+        align-items: flex-start;
+        width:30vw !important;
+        height: 100%;
+        
+
+        .tab{
+            width: 25vw;
+            margin-bottom: 1vh
+        }
+        .active{
+            background-color: $orange !important;
+            border-right: solid 1vw $blue;
+            color: $blue;
+            width: 25vw;
+        }
+    }
+    
+}
+
+@include for-tablet-portrait-up{
+    .pageDirection{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .tabContent{
+        width:55vw;
+        height: auto;
+        margin-top: 0vh !important;
+    }
+    .tabList{
+        display: flex;
+        flex-direction: column ;
+        justify-content: space-around;
+        align-items: flex-start;
+        width:30vw !important;
+        height: 100%;
+        
+
+        .tab{
+            width: 25vw;
+            margin-bottom: 1vh
+        }
+        .active{
+            background-color: $orange !important;
+            border-right: solid 1vw $blue;
+            color: $blue;
+            width: 25vw;
+        }
+    }
+
+}
+
+@include for-tablet-landscape-up{
+    .tabContent{
+        width: 70vw !important;
+        margin-top: 0vh !important;
+    }
+    .tabList{
+        width:40vw !important;
+        .tab{
+            width: 20vw;
+        }
+        .active{
+            width: 20vw;
+        }
+    }
+
+}
+
+
+@include for-desktop-up{
+    .tabContent{
+        width: 65vw !important;
+        margin-left: 2vw !important;
+    }
+    .tabList{
+        width:40vw !important;
+        .tab{
+            width: 20vw;
+        }
+        .active{
+            width: 20vw;
+        }
+    }
+}
+
