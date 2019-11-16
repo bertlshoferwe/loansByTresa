@@ -1,6 +1,6 @@
  [build]
-base = loansByTresa/"
-publish = "loansByTresa/build/"
+base = /"
+publish = "build/"
 command = "yarn build"
 
 [[redirects]]
