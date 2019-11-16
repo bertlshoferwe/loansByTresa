@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useCallback }   from 'react';
 import { withRouter } from 'react-router';
-import { push } from 'connected-react-router';
 import { AppBar, ButtonBase, Toolbar, Typography, Link } from '@material-ui/core';
 import Logo from '../../images/Logo.png';
 import './Header.scss'
 
-const Header = ({ location }) => {
+const Header = ({ location, history }) => {
     const [pageTitle, setPageTitle] = useState('')
     const [width, setWidth] = useState(0)
 
-    const _pageNavigate = pageRoute => () => push(pageRoute)
+    const _pageNavigate = pageRoute => () => history.push(pageRoute)
     const _updateWindowDimensions = useCallback(() => {
         setWidth(window.innerWidth)
     }, [])
@@ -51,7 +50,7 @@ const Header = ({ location }) => {
     return (
         <AppBar className='appBar' position="fixed">
             <Toolbar className='toolBar'>
-                <Link href='javascript:void(0);' onClick={_pageNavigate('/')} >
+                <Link href="" onClick={_pageNavigate('/')} >
                     <img src={Logo} alt='logo' className='headerLogo' />
                 </Link>
                 {width > 600 && (
