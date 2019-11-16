@@ -1,79 +1,71 @@
-import React, { Component }               from 'react';
-import ReactDOM                           from 'react-dom';
-import {Provider}                         from 'react-redux';
-import { Route, Switch }                  from 'react-router'
-import { ConnectedRouter }                from 'connected-react-router'
+import React                from 'react';
+import ReactDOM             from 'react-dom';
+import {Provider}           from 'react-redux';
+import { Route, Switch }    from 'react-router'
 import { createStore, compose, applyMiddleware } from 'redux';
-import { createBrowserHistory }           from 'history'
-import { connectRouter, routerMiddleware } from 'connected-react-router'
-import thunk                                from 'redux-thunk';
-import Reducers                           from './Reducers';
-import * as serviceWorker              from './serviceWorker';
+import { createBrowserHistory } from 'history'
+import { ConnectedRouter, routerMiddleware } from 'connected-react-router'
+import thunk                from 'redux-thunk';
+import createRootReducer    from './Reducers';
+import * as serviceWorker   from './serviceWorker';
+import ScrollToTop          from './scrollToTop';
+import Header               from './Components/Header/Header';
+import Footer               from './Components/Footer/Footer';
+import Home                 from './pages/Home/home';
+import About                from './pages/About/About';
+import Loans                from './pages/Loans/Loans';
+import Apply                from './pages/Apply/Apply';
+import Glossary             from './pages/Glossary/Glossary';
+import PrivacyPolicy        from './pages/PrivacyPolicy/PrivacyPolicy';
+import TermsOfUse           from './pages/TermsOfUse/TermsOfUse';
 import './index.css';
-import ScrollToTop                           from './scrollToTop';
-import Header                           from './Components/Header/Header';
-import Footer                           from './Components/Footer/Footer';
-import Home                               from './pages/Home/home';
-import About                               from './pages/About/About';
-import Loans                               from './pages/Loans/Loans';
-import Apply                               from './pages/Apply/Apply';
-import Glossary                              from './pages/Glossary/Glossary';
-import PrivacyPolicy                               from './pages/PrivacyPolicy/PrivacyPolicy';
-import TermsOfUse                               from './pages/TermsOfUse/TermsOfUse';
-
-
 
 const history = createBrowserHistory()
 
 const initialState = {};
 
 const store = createStore(
-  connectRouter(history)(Reducers),
+    createRootReducer(history),
     initialState,
     compose(
-      applyMiddleware(
-        routerMiddleware(history),
-        thunk
-      ),
-  ),
+        applyMiddleware(
+            routerMiddleware(history),
+            thunk
+        ),
+    ),
 )
 
-class App extends Component {
-  state = {
+const App = () => {
+    const _scrollTo = () => window.scrollTo(0, 0)
 
-};
+    return (
+        <Provider store={store}>
+            <ConnectedRouter onUpdate={_scrollTo}  history={history} >
+            <ScrollToTop>
+                <div className='app-body'>
 
-  render(){
-    
-    return ( 
-          <Provider store={store}>
-              <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)}  history={history}>
-                <ScrollToTop>
-                  <div className='app-body'>
+                    <Header/>
 
-                      <Header/>
+                    <div className='app-content'>
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/About" component={About} />
+                            <Route path="/Loans" component={Loans} />
+                            <Route path="/Apply" component={Apply} />
+                            <Route path="/Glossary" component={Glossary} />
+                            <Route path="/Privacy_Policy" component={PrivacyPolicy} />
+                            <Route path="/Terms_Of_Use" component={TermsOfUse} />
+                        </Switch>
+                    </div>
 
-                      <div className='app-content'>
-                          <Switch>
-                              <Route exact path="/" component={Home} />
-                              <Route path="/About" component={About} />
-                              <Route path="/Loans" component={Loans} />
-                              <Route path="/Apply" component={Apply} />
-                              <Route path="/Glossary" component={Glossary} />
-                              <Route path="/Privacy_Policy" component={PrivacyPolicy} />
-                              <Route path="/Terms_Of_Use" component={TermsOfUse} />
-                                            
-                          </Switch>
-                      </div>
-                      
-                     <Footer />
-                  </div>    
-                </ScrollToTop>
-              </ConnectedRouter>
-          </Provider>
-    );
-  }
-} 
+                    <Footer />
+                </div>
+            </ScrollToTop>
+            </ConnectedRouter>
+        </Provider>
+    )
+}
+
 ReactDOM.render(<App/>, document.getElementById('root'));
 
 if (module.hot) {

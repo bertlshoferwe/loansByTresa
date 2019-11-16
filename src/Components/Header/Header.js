@@ -1,131 +1,72 @@
-import React, { Component }     from 'react';
-import { withRouter } from "react-router";
+import React, { useState, useEffect, useCallback }   from 'react';
+import { withRouter } from 'react-router';
+import { push } from 'connected-react-router';
 import { AppBar, ButtonBase, Toolbar, Typography, Link } from '@material-ui/core';
 import Logo from '../../images/Logo.png';
 import './Header.scss'
 
-class Header extends Component{ 
-    constructor(props){
-        super(props);
-        this.state={
-            pathname:'',
-            location:'',
-            Width:''
-        };
-        this.pageTitle = this.pageTitle.bind(this)
-        this.pageNavigate = this.pageNavigate.bind(this)
-    } 
-    
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateWindowDimensions);
-    }
-    componentDidMount(){
-        window.addEventListener('resize', this.updateWindowDimensions);
-        this.pageTitle()
-    }
+const Header = ({ location }) => {
+    const [pageTitle, setPageTitle] = useState('')
+    const [width, setWidth] = useState(0)
 
-    shouldComponentUpdate(nextProps) {
-        return this.props.location.pathname !== this.state.pathname
-    };
+    const _pageNavigate = pageRoute => () => push(pageRoute)
+    const _updateWindowDimensions = useCallback(() => {
+        setWidth(window.innerWidth)
+    }, [])
 
-    componentDidUpdate() {
-        this.pageTitle()
-    };
-
-
-    pageTitle() {
-        switch(this.props.location.pathname){
-            case '/':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location:null
-                })
-            break;
+    const _pageTitle = useCallback(() => {
+        switch(location.pathname){
             case '/About':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'About'
-                })
+                setPageTitle('About')
             break;
             case '/Loans':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Loans'
-                })
+                setPageTitle('Loans')
             break;
             case '/Apply':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Apply'
-                })
+                setPageTitle('Apply')
             break;
             case '/Glossary':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Glossary'
-                })
+                setPageTitle('Glossary')
             break;
             case '/Privacy_Policy':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Privacy Policy'
-                })
+                setPageTitle('Privacy Policy')
             break;
             case '/Terms_Of_Use':
-                this.setState({
-                    pathname: this.props.location.pathname,
-                    location: 'Terms Of Use'
-                })
+                setPageTitle('Terms Of Use')
             break;
             default:
+                setPageTitle('')
         }
-    }
+    }, [location])
 
-    pageNavigate( pageRoute ){
-        this.props.history.push({
-            pathname: pageRoute,
-        })}
+    useEffect(() => {
+        _pageTitle()
+        window.addEventListener('resize', _updateWindowDimensions);
 
+        return () => {
+            window.removeEventListener('resize', _updateWindowDimensions);
+        }
+    }, [_updateWindowDimensions, _pageTitle])
 
-    render() {
-
-        const rightButtons= (window.innerWidth < 600)?<div>
-                                                        
-                                                    </div> 
-                                        :
-                                           <div>
-                                               <ButtonBase focusRipple
-                                                    className='prequalButton'
-                                                    onClick={ () => {this.pageNavigate( '/Apply')} }
-                                                >
-                                                    <Typography  variant="h5">
-                                                        PreQualify Today
-                                                    </Typography>
-                                                </ButtonBase>
-                                           </div>  
-
-        const header = <div >
-                            <AppBar className='appBar' position="fixed">
-                            <Toolbar className='toolBar'> 
-                                <Link href='javascript:void(0);'  onClick={() => {this.pageNavigate('/')} } >
-                                    <img src={Logo} alt='logo' className='headerLogo' /> 
-                                </Link>
-                                {rightButtons}
-                            </Toolbar>
-                            </AppBar>
-                        </div>
-                           
-                             
-         
-
-        return(
-            <div>
-            
-                    {header}
-
-            </div>
-        );
-    }
+    return (
+        <AppBar className='appBar' position="fixed">
+            <Toolbar className='toolBar'>
+                <Link href='javascript:void(0);' onClick={_pageNavigate('/')} >
+                    <img src={Logo} alt='logo' className='headerLogo' />
+                </Link>
+                {width > 600 && (
+                    <ButtonBase focusRipple
+                        className='prequalButton'
+                        onClick={_pageNavigate( '/Apply')}
+                    >
+                        <Typography  variant="h5">
+                            PreQualify Today
+                        </Typography>
+                    </ButtonBase>
+                )}
+            </Toolbar>
+        </AppBar>
+    );
 }
 
 

@@ -3,29 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.1.1",
-    "@material-ui/icons": "^4.2.0",
-    "connected-react-router": "^4.5.0",
-    "history": "^4.7.2",
-    "lodash": "^4.17.4",
-    "node-sass": "^4.12.0",
-    "query-string": "^5.1.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "3.0.1",
-    "redux": "^3.7.2",
+    "@material-ui/core": "^4.6.1",
+    "@material-ui/icons": "^4.5.1",
+    "connected-react-router": "^6.5.2",
+    "history": "^4.10.1",
+    "lodash": "^4.17.15",
+    "lodash.map": "^4.6.0",
+    "node-sass": "^4.13.0",
+    "query-string": "^6.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.4",
     "redux-history": "^1.0.2",
-    "redux-thunk": "^2.2.0",
-    "yarn": "^1.16.0"
+    "redux-thunk": "^2.3.0",
+    "yarn": "^1.19.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "nuke": "rm -rf node_modules"
   },
   "eslintConfig": {
     "extends": "react-app"
