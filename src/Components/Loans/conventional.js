@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardContent, List, ListItem, ListItemText, Link,  Typography } from '@material-ui/core';
+import { Card, CardContent, List, ListItem, ListItemText, Typography } from '@material-ui/core';
 
 class Conventional extends Component {
     constructor(props) {

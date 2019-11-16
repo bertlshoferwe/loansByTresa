@@ -1,7 +1,7 @@
 import React, { Component }         from 'react';
 import {Terms}                      from '../../terms';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { Card, CardContent, Drawer, Link, List, ListItem, Typography, Container, Fab }   from '@material-ui/core';
+import { Card, CardContent, Drawer, List, ListItem, Typography, Container, Fab }   from '@material-ui/core';
 import './_Glossary.scss'
 
 class Glossary extends Component{ 

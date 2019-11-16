@@ -11,31 +11,62 @@ import Refinance from '../../Components/Loans/refinance';
 import Reverse from '../../Components/Loans/reverse';
 import USDA from '../../Components/Loans/usda';
 import VA from '../../Components/Loans/va';
-import { List, ListItem, ListItemText, Container } from '@material-ui/core';
+import { List, ListItem, ListItemText, Container, Drawer, Fab } from '@material-ui/core';
 
 class Loans extends Component{ 
     constructor(props){
         super(props);
         this.state={
-            tab: 0
+            tab: 0,
+            isDrawerOpen: false,
+            width: window.innerWidth,
         };
 
         this.switchTab = this.switchTab.bind(this)
+        this.closeDrawer = this.closeDrawer.bind(this)
+        this.openDrawer = this.openDrawer.bind(this)
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
     }
 
-        switchTab(data) {
-            this.setState({
-                tab: data
-            })
-
-            window.scrollTo({
-                top: 0, 
-                behavior: 'smooth'
-            });
+    componentDidMount() {
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+    
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+    // Update window dimensions
+    updateWindowDimensions() {
+        this.setState({
+            width: window.innerWidth
+        });
         }
 
+    closeDrawer() {
+        this.setState({
+            isDrawerOpen: false
+        })
+    };
+
+    openDrawer() {
+        this.setState({
+            isDrawerOpen: true
+        })
+    };
+
+    switchTab(data) {
+        this.setState({
+            tab: data
+        })
+
+        window.scrollTo({
+            top: 0, 
+            behavior: 'smooth'
+        });
+    }
+
     render() {
-       
+       const { width, isDrawerOpen, tab} = this.state
         //Tab Names to loop through
         const tabNames =[
             'Types Of Loans',
@@ -54,35 +85,50 @@ class Loans extends Component{
         const Tabs = tabNames.map( ( tabNames, index ) =>
             <ListItem key={index}
                       button
-                      onClick={() => {this.switchTab( index ) } }
-                      className={(this.state.tab === index)? 'tab active' : 'tab'} 
+                      onClick={() => {this.switchTab( index ); this.closeDrawer() } }
+                      className={( tab === index)? 'tab active' : 'tab' } 
                         >
                     <ListItemText primary ={tabNames}/>
             </ListItem>
         )
-          
         //Format tabs
-        const tabSetup = <List className='tabList'>
-            {Tabs}
-        </List>
+        const tabSetup =( width < 600 )?<Drawer 
+                                                        anchor="right" 
+                                                        open={ isDrawerOpen } 
+                                                        onClose={this.closeDrawer}
+                                                        
+                                                        >
+                                                            <List>
+                                                                {Tabs}
+                                                            </List>
+                                                    </Drawer>
+                                                    :
+                                                    <div className='tabWrapper tabList'>
+                                                        <List>
+                                                            {Tabs}
+                                                        </List>
+                                                    </div>;
 
-            const tab7 = 'this is tabe two'
-            const tab8 = 'this is tabe two'
-            const tab9 = 'this is tabe two'
-            const tab10 = 'this is tabe two'
+const fabOpen = ( width < 600)? <Fab className='azFab' onClick={this.openDrawer}>
+                                                <i className="material-icons">
+                                                    sort
+                                                </i>
+                                            </Fab>
+                                            :
+                                            <div />
 
 const contentSetup =<div>
-                                {this.state.tab === 0 && < TypesLoans /> }
-                                {this.state.tab === 1 && < Bridge /> }
-                                {this.state.tab === 2 && < Commercial /> }
-                                {this.state.tab === 3 && < Construction />  }
-                                {this.state.tab === 4 && < Conventional /> }
-                                {this.state.tab === 5 && < FHA /> }
-                                {this.state.tab === 6 && < Jumbo /> }
-                                {this.state.tab === 7 && < Refinance /> }
-                                {this.state.tab === 8 && < Reverse />}
-                                {this.state.tab === 9 && < USDA />}
-                                {this.state.tab === 10 && < VA /> }
+                                { tab === 0 && < TypesLoans /> }
+                                { tab === 1 && < Bridge /> }
+                                { tab === 2 && < Commercial /> }
+                                { tab === 3 && < Construction />  }
+                                { tab === 4 && < Conventional /> }
+                                { tab === 5 && < FHA /> }
+                                { tab === 6 && < Jumbo /> }
+                                { tab === 7 && < Refinance /> }
+                                { tab === 8 && < Reverse />}
+                                { tab === 9 && < USDA />}
+                                { tab === 10 && < VA /> }
                             </div>
                                     
 
@@ -99,6 +145,7 @@ const contentSetup =<div>
         return(
             <Container className='containerMargin' maxWidth="lg" >
                 {pageSetup}
+                {fabOpen}
             </Container>
         );
     }

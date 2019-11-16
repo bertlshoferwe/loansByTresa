@@ -42,6 +42,7 @@ render() {
                                         </ListItem>
                                         <ListItem>
                                             <Typography variant='body2' color='textSecondary' className='nested'>The interest rate of the mortgage adjusts periodically based on market conditions. For example, your payment will go up if rates go up and go down if rates go down.
+                                                    {/* eslint-disable-next-line */}
                                                 <Link href="javascript:void(0);" > More Information</Link></Typography>
                                         </ListItem>
 
