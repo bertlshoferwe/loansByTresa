@@ -5,6 +5,7 @@ import { Route, Switch }                  from 'react-router'
 import { Router } from "react-router-dom";
 import { createBrowserHistory }           from 'history'
 import * as serviceWorker              from './serviceWorker';
+import ReactGA from 'react-ga';
 import './index.css';
 import Header                           from './Components/Header/Header';
 import Footer                           from './Components/Footer/Footer';
@@ -16,7 +17,11 @@ import Glossary                              from './pages/Glossary/Glossary';
 import PrivacyPolicy                               from './pages/PrivacyPolicy/PrivacyPolicy';
 import TermsOfUse                               from './pages/TermsOfUse/TermsOfUse';
 
-
+ReactGA.initialize('UA-147535462-1', {
+  debug: true,
+  titleCase: false,
+});
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const history = createBrowserHistory()
 
@@ -26,7 +31,9 @@ class App extends Component {
 };
 
   render(){
+
     
+
     return ( 
               <Router onUpdate={() => window.scrollTo(0, 0)}  history={history}>
                 <ScrollToTop>

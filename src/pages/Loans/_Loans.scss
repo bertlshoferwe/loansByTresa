@@ -1,5 +1,8 @@
 @import '../Home/app'; 
 
+.tabContent{
+    min-height: 100vh;
+}
 .tabTitle{
     color: $blue;
     margin: 2vh 0vw 2vh 2vw !important;
@@ -17,6 +20,10 @@
 
 @include for-phone-only-portrait{
 
+    // .tabContent{
+    //     min-width:100vw;
+    // }
+
 } 
 
 @include for-phone-only-landscape{
@@ -26,8 +33,7 @@
         justify-content: space-evenly;
     }
     .tabContent{
-        width:55vw;
-        height: auto;
+        min-width:55vw;
         margin-top: 15vh !important;
     }
     .tabList{
@@ -65,8 +71,7 @@
         top: 8vh;
     }
     .tabContent{
-        width:55vw;
-        height: auto;
+       min-width:55vw;
         margin-top: 0vh !important;
     }
     .tabList{
@@ -94,7 +99,7 @@
 
 @include for-tablet-landscape-up{
     .tabContent{
-        width: 70vw !important;
+        min-width: 70vw !important;
         margin-top: 0vh !important;
     }
     .tabWrapper{
@@ -120,7 +125,7 @@
         top: 12vh;
     }
     .tabContent{
-        width: 65vw !important;
+        min-width: 65vw !important;
         margin-left: 2vw !important;
     }
     .tabList{
