@@ -17,18 +17,23 @@ import Glossary                              from './pages/Glossary/Glossary';
 import PrivacyPolicy                               from './pages/PrivacyPolicy/PrivacyPolicy';
 import TermsOfUse                               from './pages/TermsOfUse/TermsOfUse';
 
-ReactGA.initialize('UA-147535462-1', {
-  debug: true,
-  titleCase: false,
-});
-ReactGA.pageview(window.location.pathname + window.location.search);
+ReactGA.initialize('UA-147535462-1');
 
 const history = createBrowserHistory()
+
+history.listen(location => {
+	ReactGA.set({ page: location.pathname })
+	ReactGA.pageview(location.pathname)
+})
 
 class App extends Component {
   state = {
 
 };
+
+componentDidMount() {
+  ReactGA.pageview(window.location.pathname)
+}
 
   render(){
 
