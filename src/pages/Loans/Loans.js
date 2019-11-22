@@ -1,6 +1,7 @@
 import React, { Component, Fragment }     from 'react';
 import queryString from 'query-string';
 import './_Loans.scss';
+import ReactGA from 'react-ga';
 import TypesLoans  from '../../Components/Loans/types';
 import Bridge from '../../Components/Loans/bridge';
 import Commercial from '../../Components/Loans/commercial';
@@ -78,6 +79,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'types_of_loans'}`,
             });
+            document.title=`Loans By Tresa - Type Of Loans`
+            ReactGA.modalview('/about?tab=types_of_loans');
         }
         
         if ( bridge === true) {
@@ -88,6 +91,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'bridge'}`,
             });
+            document.title=`Loans By Tresa - Bridge`
+            ReactGA.modalview('/about?tap=bridge');
         }
         
         if ( commercial === true) {
@@ -98,6 +103,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'commercial'}`,
             });
+            document.title=`Loans By Tresa - Commercial`
+            ReactGA.modalview('/about?tab=commercial');
         }
         
         if ( construction === true) {
@@ -108,6 +115,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'construction'}`,
             });
+            document.title=`Loans By Tresa - Construction`
+            ReactGA.modalview('/about?tab=construction');
         }
         
         if ( conventional === true) {
@@ -118,6 +127,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'conventional'}`,
             });
+            document.title=`Loans By Tresa - Conventional`
+            ReactGA.modalview('/about?tab=conventional');
         }
         
         if ( fha === true) {
@@ -128,6 +139,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'fha'}`,
             });
+            document.title=`Loans By Tresa - FHA`
+            ReactGA.modalview('/about?tab=fha');
         }
         
         if ( jumbo === true) {
@@ -138,6 +151,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'jumbo'}`,
             });
+            document.title=`Loans By Tresa - Jumbo`
+            ReactGA.modalview('/about?tab=jumbo');
         }
         
         if ( refinance === true) {
@@ -148,6 +163,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'refinance'}`,
             });
+            document.title=`Loans By Tresa - Refinance`
+            ReactGA.modalview('/about?tab=refinance');
         }
         
         if ( reverse === true) {
@@ -158,6 +175,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'reverse_mortgages'}`,
             });
+            document.title=`Loans By Tresa - Reverse Mortgages`
+            ReactGA.modalview('/about?tab=reverse_mortgages');
         }
         
         if ( usda === true) {
@@ -168,6 +187,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'usda'}`,
             });
+            document.title=`Loans By Tresa - USDA`
+            ReactGA.modalview('/about?tab=usda');
         }
         
         if ( va === true) {
@@ -178,6 +199,8 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'va'}`,
             });
+            document.title=`Loans By Tresa - VA`
+            ReactGA.modalview('/about?tab=va');
         }
 
         if ( type === false && 
@@ -200,6 +223,9 @@ class Loans extends Component{
                 pathname: `/Loans`,
                 search: `tab=${'types_of_loans'}`,
             });
+
+            document.title=`Loans By Tresa - Type Of Loans`
+            ReactGA.modalview('/about?tab=type_of_loans');
         }
 
     }
@@ -231,10 +257,20 @@ class Loans extends Component{
         this.setState({
             tab: data.toLowerCase()
         })
+        //update url
         this.props.history.push({
             pathname: `/Loans`,
-            search: `tab=${data.toLowerCase()}`,
+            search: `tab=${data}`,
         });
+        //set page title
+        document.title=`Loans By Tresa - ${data.toLowerCase()}`
+        //set google analitics
+        ReactGA.modalview(`/Loans?tab=${data.toLowerCase()}`);
+        //set event in google analitics
+        ReactGA.event({
+            category: 'Tab Switch',
+            action: `Switched To ${data.toLowerCase()}`
+          });
 
         //scroll window to top
         window.scrollTo({

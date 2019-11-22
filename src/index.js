@@ -17,10 +17,12 @@ import Glossary                              from './pages/Glossary/Glossary';
 import PrivacyPolicy                               from './pages/PrivacyPolicy/PrivacyPolicy';
 import TermsOfUse                               from './pages/TermsOfUse/TermsOfUse';
 
+//initiate google analitics
 ReactGA.initialize('UA-147535462-1');
 
 const history = createBrowserHistory()
 
+// add event listener to set page on page change
 history.listen(location => {
 	ReactGA.set({ page: location.pathname })
 	ReactGA.pageview(location.pathname)
@@ -32,6 +34,7 @@ class App extends Component {
 };
 
 componentDidMount() {
+  //set initial page for google analitics 
   ReactGA.pageview(window.location.pathname)
 }
 

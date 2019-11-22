@@ -10,6 +10,7 @@ class TermsOfUse extends Component{
 
 
     render() {
+        document.title='Loans By Tresa - Terms Of Use'
 
         let TermsOfUse = <div> 
                         <Typography variant="h2" className='pageTitle'>

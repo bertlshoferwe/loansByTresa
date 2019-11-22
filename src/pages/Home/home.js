@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router'
+import ReactGA from 'react-ga';
 import './_app.scss';
 import Logo from '../../images/Logo.png';
 import { ButtonBase, Typography } from '@material-ui/core';
@@ -35,10 +36,16 @@ pageNavigate( pageRoute ){
     this.props.history.push({
         pathname: pageRoute,
     })
+    ReactGA.event({
+        category: 'Navigate from home',
+        action: `New Page is ${pageRoute}`
+      });
 }
 
 
     render() {
+        document.title='Loans By Tresa - Home'
+
         const cardSet1 = [
             {
                 id: 1,

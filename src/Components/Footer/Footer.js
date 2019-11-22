@@ -1,6 +1,7 @@
 import React, { Component }     from 'react';
 import { withRouter } from "react-router";
 import { Typography, Link } from '@material-ui/core';
+import ReactGA from 'react-ga';
 import fairHouse from '../../images/fairHouse.png'
 import altius from '../../images/altius.png'
 import './_Footer.scss'
@@ -16,7 +17,12 @@ class Footer extends Component{
     pageNavigate( pageRoute ){
         this.props.history.push({
             pathname: pageRoute,
-        })}
+        })
+        ReactGA.event({
+            category: 'Navigate from footer',
+            action: `New Page is ${pageRoute}`
+          });
+    }
 
 
     render() {

@@ -10,6 +10,7 @@ class PrivacyPolicy extends Component {
 
 
     render() {
+        document.title='Loans By Tresa - Privacy Policy'
 
         let Display = <div>
                         <Typography variant="h2" className='pageTitle'>

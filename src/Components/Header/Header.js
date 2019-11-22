@@ -1,5 +1,6 @@
 import React, { Component }     from 'react';
 import { withRouter } from "react-router";
+import ReactGA from 'react-ga';
 import { AppBar, ButtonBase, Toolbar, Typography, Link } from '@material-ui/core';
 import Logo from '../../images/Logo.png';
 import './_Header.scss'
@@ -21,29 +22,18 @@ class Header extends Component{
     }
     componentDidMount(){
         window.addEventListener('resize', this.updateWindowDimensions);
-        this.pageTitle()
     }
 
-    shouldComponentUpdate(nextProps) {
-        
-        return nextProps.location.pathname !== this.state.pathname
-       
-    };
-    componentDidUpdate() {
-        this.pageTitle()
-       
-    };
-
-    pageTitle() {
-        this.setState({
-            pathname:this.props.location.pathname
-        })
-    }
 
     pageNavigate( pageRoute ){
         this.props.history.push({
             pathname: pageRoute,
-        })}
+        })
+        ReactGA.event({
+            category: 'Navigate from header',
+            action: `New Page is ${pageRoute}`
+          });
+    }
 
 
     render() {

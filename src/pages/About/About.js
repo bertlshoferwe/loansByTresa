@@ -13,7 +13,7 @@ class About extends Component{
 
 
     render() {
-
+        document.title='Loans By Tresa - About'
           
          
 

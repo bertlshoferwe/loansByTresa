@@ -1,5 +1,6 @@
 import React, { Component }         from 'react';
 import {Terms}                      from '../../terms';
+import ReactGA from 'react-ga';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Card, CardContent, Drawer, List, ListItem, Typography, Container, Fab }   from '@material-ui/core';
 import './_Glossary.scss'
@@ -14,7 +15,6 @@ class Glossary extends Component{
 
         this.closeDrawer = this.closeDrawer.bind(this)
         this.openDrawer = this.openDrawer.bind(this)
-        // this.scrollToView = this.scrollToView.bind(this)
 
     }
 
@@ -23,16 +23,25 @@ class Glossary extends Component{
         this.setState({
             isDrawerOpen: false
         })
+        ReactGA.event({
+            category: 'Glossary Drawer',
+            action: `Closed Drawer`
+          });
     };
 
     openDrawer() {
         this.setState({
             isDrawerOpen: true
         })
+        ReactGA.event({
+            category: 'Glossary Drawer',
+            action: `Opened Drawer`
+          });
     };
 
 
     render() {
+        document.title='Loans By Tresa - Glossary'
 
         const { isDrawerOpen } = this.state
 

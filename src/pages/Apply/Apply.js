@@ -24,6 +24,7 @@ class Apply extends Component {
       }; 
 
 render() {
+    document.title='Loans By Tresa - Apply'
 
     const loadingView = (this.state.loading === true)? 
                                                 <div className='loadingView'>
