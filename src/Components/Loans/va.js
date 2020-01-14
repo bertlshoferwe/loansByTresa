@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardContent, List, ListItem, ListItemText, Table, TableBody, TableCell, TableRow,  Typography } from '@material-ui/core';
+import { Card, CardContent, List, ListItem, ListItemText, Paper, TableHead, Table, TableBody, TableCell, TableRow,  Typography } from '@material-ui/core';
 
 class VA extends Component {
     constructor(props) {
@@ -29,55 +29,89 @@ render() {
                                             <ListItemText primary = 'Loans through the Department of Veteran Affairs (VA loans) are made by approved lenders and guaranteed (not insured) by the VA. Borrowers must be either current or former members of the military.' />
                                         </ListItem>
                                         <ListItem>
-                                            <ListItemText secondary = 'VA loans require an upfront nonrefundable funding fee, which is similar to the FHA’s UFMIP. The funding fee is typically financed into the loan amount. Funding fees vary depending on whether the borrower:' 
+                                            <ListItemText secondary = 'VA loans require an upfront nonrefundable funding fee, which is similar to the FHA’s UFMIP. The funding fee is typically financed into the loan amount. Funding fees vary depending on whether the borrower is a first-time or repeat borrower' 
                                             />
                                         </ListItem>
-                                        <ListItem>
-                                            <ListItemText secondary = 'Is a first-time or repeat borrower' 
-                                            className='nested'
-                                            />
-                                        </ListItem>
-                                        <ListItem>
-                                            <ListItemText secondary = 'Served in the military or in the Reserves or National Guard' 
-                                            className='nested'
-                                            />
-                                        </ListItem>
-                                        <ListItem>
-                                            <ListItemText secondary = 'Makes a down payment of at least 5% or makes no down payment' 
-                                            className='nested'
-                                            />
-                                        </ListItem>
-
-
+                                        
                                         <ListItem>
                                             <ListItemText primary = 'Examples of funding fees below:' 
                                             />
                                         </ListItem>
 
                                         {/* insert table here */}
-                                        <div className='tableWrapper' >
-                                            <Table className='table' >
-                                                <TableBody>
-                                                    <TableRow>
-                                                        <TableCell>Initial loan, Active duty</TableCell>
-                                                        <TableCell>2.15%</TableCell>
-                                                    </TableRow>
-                                                    <TableRow>
-                                                        <TableCell>Initial loan, Reserve</TableCell>
-                                                        <TableCell>2.4%</TableCell>
-                                                    </TableRow>
-                                                    <TableRow>
-                                                        <TableCell>Subsequen loan, Active and Reserve</TableCell>
-                                                        <TableCell>3.3%</TableCell>
-                                                    </TableRow>
-                                                    <TableRow>
-                                                        <TableCell>Disabled</TableCell>
-                                                        <TableCell>0.0%</TableCell>
-                                                    </TableRow>
+                                        <Paper className='tableWrapper' >
+                                                <Table className='table' size='small'>
+                                                    <TableHead>
+                                                        <TableRow>
+                                                            <TableCell><strong>Type of Loan</strong></TableCell>
+                                                            <TableCell><strong>Down Payment</strong></TableCell>
+                                                            <TableCell><strong>Percentage of First Time Use</strong></TableCell>
+                                                            <TableCell><strong>Percentage for Subsequent Use</strong></TableCell>
+                                                        </TableRow>
+                                                    </TableHead>
+                                                    <TableBody>
+                                                        
+                                                        <TableRow>
+                                                            <TableCell><strong>Purchase and Construction Loans</strong> </TableCell>
+                                                            <TableCell> 
+                                                                <TableRow>
+                                                                    <TableCell>None</TableCell>
+                                                                </TableRow>
+                                                                <TableRow>
+                                                                    <TableCell>5% but less than 10%</TableCell>                                                                        
+                                                                </TableRow>
+                                                                <TableRow>
+                                                                    <TableCell>10% or more</TableCell>
+                                                                </TableRow>
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                <TableRow>
+                                                                    <TableCell>2.30%</TableCell>
+                                                                </TableRow>
+                                                                <TableRow>
+                                                                    <TableCell>1.65%</TableCell>
+                                                                </TableRow>
+                                                                <TableRow>
+                                                                    <TableCell>1.40%</TableCell>
+                                                                </TableRow>
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                <TableRow>
+                                                                    <TableCell>3.60%</TableCell>
+                                                                </TableRow>
+                                                                <TableRow>
+                                                                    <TableCell>1.65%</TableCell>
+                                                                </TableRow>
+                                                                <TableRow>
+                                                                    <TableCell>1.40%</TableCell>
+                                                                </TableRow>
+                                                            </TableCell>
+                                                        </TableRow>
 
-                                                </TableBody>
-                                            </Table>
-                                        </div>
+                                                        <TableRow>
+                                                            <TableCell><strong>Cash-Out Refinance Loans</strong></TableCell>
+                                                            <TableCell>N/A</TableCell>
+                                                            <TableCell>2.30%</TableCell>
+                                                            <TableCell>3.60%</TableCell>
+                                                        </TableRow>
+
+                                                        <TableRow>
+                                                            <TableCell><strong>IRRRL's</strong></TableCell>
+                                                            <TableCell>N/A</TableCell>
+                                                            <TableCell>0.50%</TableCell>
+                                                            <TableCell>0.50%</TableCell>
+                                                        </TableRow>
+
+                                                        <TableRow>
+                                                            <TableCell><strong>Loan Assumptions</strong></TableCell>
+                                                            <TableCell>N/A</TableCell>
+                                                            <TableCell>2.30%</TableCell>
+                                                            <TableCell>3.60%</TableCell>
+                                                        </TableRow>
+
+                                                    </TableBody>
+                                                </Table>
+                                        </Paper>
 
                                         <ListItem>
                                             <ListItemText primary = 'The VA considers the following in determining eligibility for a VA loan:' 
@@ -110,7 +144,7 @@ render() {
                                         </ListItem>
 
                                         <ListItem>
-                                            <ListItemText secondary = 'The VA will guarantee the lesser of 25% of the loan balance or 25% of the conforming loan limit ( for 2019, $484,350 in most areas).' 
+                                            <ListItemText secondary = 'For Veterans who have previously used entitlement and such entitlement has not been restored, the VA will guarantee the lesser of 25% of the loan balance or 25% of the conforming loan limit ( Conformingloan limit for 2020, $1,500,000).' 
                                             />
                                         </ListItem>
                                         <ListItem>

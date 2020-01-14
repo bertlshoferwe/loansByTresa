@@ -51,28 +51,36 @@ pageNavigate( pageRoute ){
                 id: 1,
                 title: 'Loans',
                 icon: 'home',
-                route: '/Loans',
+                route: () => {this.pageNavigate('/Loans')},
+                cardButtonClass: 'homeButton'
             },
             {
                 id: 2,
                 title: 'Apply',
                 icon: 'library_books',
-                route: '/Apply',
+                route: () => {this.pageNavigate('/Apply')},
+                cardButtonClass: 'homeButton'
             },
-        ];
-
-        const cardSet2 = [
             {
                 id: 3,
                 title: 'Glossary',
                 icon: 'help',
-                route: '/Glossary',
+                route: () => {this.pageNavigate('/Glossary')},
+                cardButtonClass: 'homeButton'
             },
             {
                 id: 4,
                 title: 'About Me',
                 icon: 'account_box',
-                route: '/About',
+                route: () => {this.pageNavigate('/About')},
+                cardButtonClass: 'homeButton'
+            },
+            {
+                id: 5,
+                title: 'Calculator',
+                icon: 'dialpad',
+                route: '',
+                cardButtonClass: 'homeButton calculator'
             },
         ];
 
@@ -106,14 +114,13 @@ pageNavigate( pageRoute ){
                 </div>
 
                 <div className='optionsWrapper'>
-                    <div className='cardWrapper'>
                         {cardSet1.map(card => (<div key={card.id} className='homePaper' >
                             <ButtonBase
                                 focusRipple
-                                className='homeButton'
+                                className={card.cardButtonClass}
                                 // eslint-disable-next-line 
                                 href='javascript:void(0)'
-                                onClick={ () => {this.pageNavigate(card.route)} }
+                                onClick={ card.route } 
                             >
                                 <span>
                                     <i className='material-icons optionsImage'> {card.icon} </i>
@@ -128,30 +135,7 @@ pageNavigate( pageRoute ){
                         </div>
                         ))}
 
-                    </div>
-                    <div className='cardWrapper'>
 
-                        {cardSet2.map(card => (<div key={card.id} className='homePaper' >
-                            <ButtonBase
-                                focusRipple
-                                className='homeButton'
-                                // eslint-disable-next-line 
-                                href='javascript:void(0)'
-                                onClick={ () => {this.pageNavigate(card.route)} }
-                            >
-                                <span>
-                                    <i className='material-icons optionsImage'> {card.icon} </i>
-                                </span>
-                                <Typography
-                                    variant="h5"
-                                    className='optionsText'
-                                >
-                                    {card.title}
-                                </Typography>
-                            </ButtonBase>
-                        </div>
-                        ))}
-                    </div>
                 </div>
 
             </div>

@@ -37,7 +37,6 @@ class Header extends Component{
 
 
     render() {
-
     const prequalFlag= (this.state.pathname === '/' || this.state.pathname === '/Apply' )?<div>
                                                         
                                                     </div> 

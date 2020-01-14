@@ -18,7 +18,7 @@ import PrivacyPolicy                               from './pages/PrivacyPolicy/P
 import TermsOfUse                               from './pages/TermsOfUse/TermsOfUse';
 
 //initiate google analitics
-ReactGA.initialize('UA-153404448-1');
+// ReactGA.initialize('UA-153404448-1');
 
 const history = createBrowserHistory()
 

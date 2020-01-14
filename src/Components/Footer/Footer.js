@@ -196,10 +196,10 @@ class Footer extends Component{
                         </div>
                         <div className='bottomfooter'>
                             <div>
-                                Copyright © 2019 Tresa Bertlshofer | Altius Mortgage
+                                Copyright © 2020 Tresa Bertlshofer | Altius Mortgage
                             </div>
                             <div>
-                               Designed by Weston Bertlshofer
+                               Created by Weston Bertlshofer
                             </div>
                         </div>          
                     </div>

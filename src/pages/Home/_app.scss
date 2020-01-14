@@ -107,15 +107,11 @@ $gray: rgb(194, 192, 192);
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-evenly ;
-    }
-    .cardWrapper{
-        width: 100%;
-        display: flex;
-        flex-wrap:wrap;
-        flex-direction: row;
-        justify-content: space-evenly ;
-    }
+        justify-content: space-evenly;
+        .calculator{
+          width:85vw;
+        };
+        }
     .homePaper{
         background-color: $blue !important;
         margin-top: 3vh;
@@ -193,15 +189,17 @@ $gray: rgb(194, 192, 192);
   border-radius:6px !important;
 }
 .optionsWrapper{
-  width: 100%;
+  width: 100vw;
   height: 25vh;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-evenly ;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around ;
+  background-color: white !important;
 }
 .homePaper{
-  width:50%
+  width:50%;
+  background-color: white !important;
 }
 .optionsImage{
   font-size: 50px;
@@ -211,20 +209,9 @@ $gray: rgb(194, 192, 192);
   font-size: 25px !important;
   color: $orange
 }
-.cardWrapper{
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-wrap:wrap;
-  flex-direction: row;
-  justify-content: space-evenly ;
-}
-.homePaper{
-  background-color: white !important;
-}
 .homeButton{
   height: 100%;
-  width: 25vw;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -284,12 +271,13 @@ $gray: rgb(194, 192, 192);
   border-radius:6px !important
 }
 .optionsWrapper{
-  width: 100%;
-  height: 20vh;
+  width: 100vw;
+  height: 25vh;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-evenly ;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around ;
+  background-color: white !important;
 }
 .optionsImage{
   font-size: 65px;
@@ -298,14 +286,6 @@ $gray: rgb(194, 192, 192);
 .optionsText{
   font-size: 35px !important;
   color: $orange
-}
-.cardWrapper{
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-wrap:wrap;
-  flex-direction: row;
-  justify-content: space-evenly ;
 }
 .homePaper{
   background-color: white !important;
@@ -337,7 +317,7 @@ $gray: rgb(194, 192, 192);
     width:100%;
   }
   .homePaper{
-    width:50%
+    width:33.3%
   }
   .optionsImage{
     font-size: 65px;
@@ -383,12 +363,6 @@ $gray: rgb(194, 192, 192);
   .optionsWrapper{
     width:100%;
   }
-  // .homePaper{
-  //   width:50%
-  // }
-  // .optionsImage{
-  //   font-size: 75px;
-  // }
   .optionsText{
     font-size: 45px !important;
   }
