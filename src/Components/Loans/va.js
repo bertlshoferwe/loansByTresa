@@ -105,8 +105,8 @@ render() {
                                                         <TableRow>
                                                             <TableCell><strong>Loan Assumptions</strong></TableCell>
                                                             <TableCell>N/A</TableCell>
-                                                            <TableCell>2.30%</TableCell>
-                                                            <TableCell>3.60%</TableCell>
+                                                            <TableCell>0.50%</TableCell>
+                                                            <TableCell>0.50%</TableCell>
                                                         </TableRow>
 
                                                     </TableBody>
