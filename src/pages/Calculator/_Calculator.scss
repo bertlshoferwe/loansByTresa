@@ -1,0 +1,135 @@
+@import '../Home/app'; 
+
+.calculatorWrapper{
+    display: flex;
+    justify-content: center;
+    .CalculatorInputLayout{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100%;
+        .fullInputLayout{
+            display: flex !important;
+            flex-direction: column !important;
+            width: 90%;
+            .fullInputs{
+                width: 100%;
+            }
+        }
+        .inputLayout{
+            display:flex !important;
+            flex-direction: row !important;
+            justify-content: space-between;
+            width: 90%;
+            .inputs{
+                width: 47%;
+            }
+        }
+    }
+    .calculateButtonwrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .calculateButton{
+            background-color:$orange !important;
+            padding:0vw !important;
+            border-radius:6px !important;
+            &:disabled{
+                background-color: $gray !important;
+            }
+        }
+    }
+
+    .table{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        width:100% !important;
+        border-bottom: none;
+        .tableBody{
+            width: 95% !important;
+            border-bottom: none;
+            .tableCell{
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+        
+
+
+@include for-phone-only-portrait{
+.calculatorWrapper{
+    flex-direction: column;
+    .calculateButtonwrapper{
+        width: 100%;
+        .calculateButton{
+            margin: 2vh 0vh 3vh 0vh !important;
+            height: 7vh;
+            width: 90%;
+        }
+    }
+    .tableCard{
+        margin-top: 5vh;
+        padding: 4vh 0vh 4vh 0vh
+    }
+}
+   
+    
+    
+}
+
+
+
+@include for-phone-only-landscape{
+    .calculatorWrapper{
+        flex-direction: row;
+        margin: 0vh 0vw 10vh 0vw;
+        .calculateButtonwrapper{
+            width: 100%;
+            .calculateButton{
+                margin: 2vh 0vh 3vh 0vh !important;
+                height: 10vh;
+                width: 50%;
+            }
+        }
+        .tableCard{
+            margin: 0vh 0vw 0vh 5vw;
+            padding: 4vh 0vh 4vh 0vh
+        }
+    }
+    
+}
+
+
+
+@include for-tablet-portrait-up{
+
+    .calculatorWrapper{
+        flex-direction: row;
+        margin: 0vh 0vw 10vh 0vw;
+        .calculateButtonwrapper{
+            width: 100%;
+            .calculateButton{
+                margin: 2vh 0vh 3vh 0vh !important;
+                height: 5vh;
+                width: 50%;
+            }
+        }
+        .tableCard{
+            margin: 0vh 0vw 0vh 5vw;
+            padding: 4vh 0vh 4vh 0vh
+        }
+    }
+
+}
+
+@include for-desktop-up{
+  
+    
+}
+

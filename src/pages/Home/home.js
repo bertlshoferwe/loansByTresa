@@ -79,7 +79,7 @@ pageNavigate( pageRoute ){
                 id: 5,
                 title: 'Calculator',
                 icon: 'dialpad',
-                route: '',
+                route: () => {this.pageNavigate('/Calculator')},
                 cardButtonClass: 'homeButton calculator'
             },
         ];

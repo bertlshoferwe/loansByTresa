@@ -16,9 +16,10 @@ import Apply                               from './pages/Apply/Apply';
 import Glossary                              from './pages/Glossary/Glossary';
 import PrivacyPolicy                               from './pages/PrivacyPolicy/PrivacyPolicy';
 import TermsOfUse                               from './pages/TermsOfUse/TermsOfUse';
+import Calculator                               from './pages/Calculator/Calculator';
 
 //initiate google analitics
-ReactGA.initialize('UA-153404448-1');
+// ReactGA.initialize('UA-153404448-1');
 
 const history = createBrowserHistory()
 
@@ -58,7 +59,7 @@ componentDidMount() {
                               <Route path="/Glossary" component={Glossary} />
                               <Route path="/Privacy_Policy" component={PrivacyPolicy} />
                               <Route path="/Terms_Of_Use" component={TermsOfUse} />
-                                            
+                              <Route path="/Calculator" component={Calculator} />
                           </Switch>
                       
                      <Footer />
