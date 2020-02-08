@@ -510,7 +510,7 @@ render() {
                                                     If you would like more information call Tresa today
                                                 </Typography>
                                                 <Typography>
-                                                    <Link href={'tel:8019233166' }>801 923 3166</Link>.
+                                                    <Link href={'tel:8019233166' }>801 923 3166</Link>
                                                 </Typography>
                                             </div>
                                         </div>
