@@ -365,7 +365,7 @@ render() {
                                             <option value="" />
                                             <option value={'New Purchase'}>New Purchase</option>
                                             <option value={'Refi'}>Refinance</option>
-                                            <option value={'Usda'}>USDA</option>
+                                            
                                         </TextField>
 
                                         <TextField
@@ -388,6 +388,7 @@ render() {
                                                     <option value={'FHA - Arm'}>FHA - ARM</option>
                                                     <option value={'VA'}>VA</option>
                                                     <option value={'VA - ARM'}>VA - ARM</option>
+                                                    <option value={'USDA'}>USDA</option>
                                         </TextField>
 
                                     </div>
