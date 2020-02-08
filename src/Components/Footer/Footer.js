@@ -155,6 +155,12 @@ class Footer extends Component{
                                         Loans
                                         </Typography>
                                     </Link>
+                                     {/* eslint-disable-next-line */}
+                                     <Link href="javascript:void(0);" onClick={() => {this.pageNavigate( '/Calculator' )} }>
+                                        <Typography variant="subtitle1" >
+                                        Calculator
+                                        </Typography>
+                                    </Link>
                                     {/* eslint-disable-next-line */}
                                     <Link href="javascript:void(0);" onClick={() => {this.pageNavigate( '/Apply' )} }>
                                         <Typography variant="subtitle1" >

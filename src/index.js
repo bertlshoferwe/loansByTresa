@@ -19,7 +19,7 @@ import TermsOfUse                               from './pages/TermsOfUse/TermsOf
 import Calculator                               from './pages/Calculator/Calculator';
 
 //initiate google analitics
-ReactGA.initialize('UA-153404448-1');
+// ReactGA.initialize('UA-153404448-1');
 
 const history = createBrowserHistory()
 
