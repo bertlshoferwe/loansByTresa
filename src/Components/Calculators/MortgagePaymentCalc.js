@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Container, TextField, ButtonBase, Typography, Table, TableBody, TableCell, TableRow, Link } from '@material-ui/core';
+import { Card, CardHeader, Container, TextField, ButtonBase, Typography, Table, TableBody, TableCell, TableRow, Link } from '@material-ui/core';
 import mortgageJs from 'mortgage-js';
 
 class MortgagePaymentCalc extends Component {
@@ -173,6 +173,15 @@ class MortgagePaymentCalc extends Component {
                     this.setState({
                         DownP: '',
                         PurchaseType: '',
+                        errors: {
+                            ...this.state.errors,
+                            isDownPError: false
+                        }
+                })
+                if(Value === 'Usda')
+                    this.setState({
+                        DownP: '',
+                        PurchaseType: 'Usda',
                         errors: {
                             ...this.state.errors,
                             isDownPError: false
@@ -356,6 +365,7 @@ render() {
                                             <option value="" />
                                             <option value={'New Purchase'}>New Purchase</option>
                                             <option value={'Refi'}>Refinance</option>
+                                            <option value={'Usda'}>USDA</option>
                                         </TextField>
 
                                         <TextField
@@ -458,6 +468,10 @@ render() {
 
         const CalculatorAnswer = ( claculatorClicked)? 
                                 <Card className='tableCard'>
+                                    <CardHeader
+                                        className='cardHeader'
+                                        title="Results"
+                                    />
                                     <Table className='table'>
                                         <TableBody className='tableBody'>
                                             <TableRow>
@@ -476,7 +490,7 @@ render() {
                                             <TableRow>
                                                 <TableCell className='tableCell'>
                                                     <Typography>
-                                                        Principal & Instrest:
+                                                        Principal & Interest:
                                                     </Typography>
                                                 </TableCell>
                                                 <TableCell className='tableCell'>
@@ -485,23 +499,31 @@ render() {
                                                     </Typography>
                                                 </TableCell>
                                             </TableRow>
-                                            <Typography variant='caption' className='captionText'>
-                                        For informational use only. Results only include principle and intrest. If you would like more information <Link href={'tel:8019233166' }>call Tresa</Link> today.
-                                    </Typography>
+                                            
                                         </TableBody>
                                         
                                     </Table>
-                                    
-                                    
+                                        <div className='captionTextWrapper'>
+                                            <div className='captionText'>
+                                                <Typography variant='caption' >
+                                                    If you would like more information call Tresa today <Link href={'tel:8019233166' }>801 923 3166</Link>.
+                                                </Typography>
+                                            </div>
+                                        </div>
                                 </Card>
                             :
                                 <div/>
 
           
         
-        const Display = <div className='calculatorWrapper'>
-                            { MortgageCalculator }
-                            { CalculatorAnswer }
+        const Display = <div className='pageWrapper'>
+                            <div className='calculatorWrapper'>
+                                { MortgageCalculator }
+                                { CalculatorAnswer }
+                            </div>
+                            <Typography variant='caption' >
+                                The above information may help you analyze your financial needs. It is based on information and assumptions provided by you regarding your goals, expectations and financial situation. The calculations do not infer that the company assumes any fiduciary duties. The calculations provided should not be construed as financial, legal or tax advice. In addition, such information should not be relied upon as the only source of information. This information is supplied from sources we believe to be reliable but we cannot guarantee its accuracy. Hypothetical illustrations may provide historical or current performance information. Past performance does not guarantee nor indicate future results.  The payment examples do not include mortgage insurance. The actual payment will be higher if mortgage insurance is required on your loan. The payment examples do not include amounts for taxes and insurance premiums. Your actual payment obligation will be greater considering taxes and insurance premiums.
+                            </Typography>
                         </div>
 
 

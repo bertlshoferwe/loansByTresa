@@ -1,5 +1,11 @@
 @import '../Home/app'; 
 
+.pageWrapper{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center;
+    margin: 0vh 0vw 5vh 0vw;
 .calculatorWrapper{
     display: flex;
     justify-content: center;
@@ -44,12 +50,17 @@
         }
     }
 
+    .cardHeader{
+        background-color: $blue;
+        color: white;
+    }
     .table{
         display: flex !important;
         flex-direction: column !important;
-        justify-content: center !important;
+        justify-content: space-between !important;
         text-align: center !important;
         width:100% !important;
+        height: 100% !important;
         border-bottom: none;
         .tableBody{
             width: 95% !important;
@@ -57,17 +68,30 @@
             .tableCell{
                 border-bottom: none;
             }
+           
             
         }
     }
     
 }
+}
 
-
+.captionTextWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100% !important;
+    margin-bottom: 1vh;
+    .captionText{
+        width:90%;
+        text-align: center;
+    }
+}
 
 @include for-phone-only-portrait{
 .calculatorWrapper{
     flex-direction: column;
+    margin: 0vh 0vw 5vh 0vw !important;
     .calculateButtonwrapper{
         width: 100%;
         .calculateButton{
@@ -77,8 +101,7 @@
         }
     }
     .tableCard{
-        margin-top: 5vh;
-        padding: 4vh 0vh 4vh 0vh
+        margin-top: 5vh !important;
     }
 }
    
@@ -102,8 +125,8 @@
         }
         .tableCard{
             height: 100%;
-            margin: 0vh 0vw 0vh 5vw;
-            padding: 4vh 0vh 4vh 0vh
+            width: 30vw;
+            margin: 0vh 0vw 0vh 5vw !important;
         }
     }
     
@@ -115,6 +138,7 @@
 
     .calculatorWrapper{
         flex-direction: row;
+        justify-content: space-between;
         margin: 0vh 0vw 10vh 0vw;
         .calculateButtonwrapper{
             width: 100%;
@@ -125,13 +149,28 @@
             }
         }
         .tableCard{
-            max-width: 45%;
+            width: 40vw;
+            height: 100%;
             margin: 0vh 0vw 0vh 5vw !important;
-            padding: 4vh 0vh 4vh 0vh !important
         }
     }
 
 }
 
+@include for-desktop-up{
+    .calculatorWrapper{
+        justify-content: space-between;
+        .calculateButtonwrapper{
+            width: 100%;
+            .calculateButton{
+                height: 7vh;
+            }
+        }
+        .tableCard{
+            width: 25vw;
+            margin: 0vh 0vw 0vh 5vw !important;
+        }
+    }
+}
 
 
