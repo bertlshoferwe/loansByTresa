@@ -386,9 +386,9 @@ render() {
                                                     <option value={'Conventional ARM'}>Conventional ARM</option>
                                                     <option value={'FHA'}>FHA</option>
                                                     <option value={'FHA - Arm'}>FHA - ARM</option>
+                                                    <option value={'USDA'}>USDA</option>
                                                     <option value={'VA'}>VA</option>
                                                     <option value={'VA - ARM'}>VA - ARM</option>
-                                                    <option value={'USDA'}>USDA</option>
                                         </TextField>
 
                                     </div>
