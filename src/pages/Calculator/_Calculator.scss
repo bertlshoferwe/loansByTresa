@@ -91,7 +91,7 @@
 @include for-phone-only-portrait{
 .calculatorWrapper{
     flex-direction: column;
-    margin: 0vh 0vw 5vh 0vw !important;
+    margin: 0vh 0vw 1vh 0vw !important;
     .calculateButtonwrapper{
         width: 100%;
         .calculateButton{
@@ -114,7 +114,7 @@
 @include for-phone-only-landscape{
     .calculatorWrapper{
         flex-direction: row;
-        margin: 0vh 0vw 10vh 0vw;
+        margin: 0vh 0vw 1vh 0vw;
         .calculateButtonwrapper{
             width: 100%;
             .calculateButton{
@@ -139,7 +139,7 @@
     .calculatorWrapper{
         flex-direction: row;
         justify-content: space-between;
-        margin: 0vh 0vw 10vh 0vw;
+        margin: 0vh 0vw 1vh 0vw;
         .calculateButtonwrapper{
             width: 100%;
             .calculateButton{
