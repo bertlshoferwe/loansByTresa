@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Container, TextField, ButtonBase, Typography, Table, TableBody, TableCell, TableRow } from '@material-ui/core';
+import { Card, Container, TextField, ButtonBase, Typography, Table, TableBody, TableCell, TableRow, Link } from '@material-ui/core';
 import mortgageJs from 'mortgage-js';
 
 class MortgagePaymentCalc extends Component {
@@ -21,6 +21,9 @@ class MortgagePaymentCalc extends Component {
             DownP: '',
             FirstName: '',
             LastName: '',
+            PhoneNumber: '',
+            HomeValue: '',
+            CreditScore: '',
             PurchaseType: '',
             LoanType: '',
             claculatorClicked: false,
@@ -47,7 +50,7 @@ class MortgagePaymentCalc extends Component {
         e.preventDefault();
 
         const Value = e.target.value
-        const regex=/^\d+(\.\d{1,2})?$/;
+        const regex=/^\d+(\.\d{1,3})?$/;
         
 
         if ( Value.length <= 0 ) {
@@ -58,7 +61,7 @@ class MortgagePaymentCalc extends Component {
                         [name]: '',
                         errors: {
                             ...this.state.errors,
-                            [name+'Error']: true
+                            ['is'+name+'Error']: true
                         }
                     })
                     break;
@@ -67,7 +70,7 @@ class MortgagePaymentCalc extends Component {
                         [name]: '',
                         errors:{
                             ...this.state.errors,
-                            [name+'Error']: true
+                            ['is'+name+'Error']: true
                         }
                     })
                     break;
@@ -76,7 +79,7 @@ class MortgagePaymentCalc extends Component {
                         [name]: '',
                         errors:{
                             ...this.state.errors,
-                            [name+'Error']: true 
+                            ['is'+name+'Error']: true 
                         }
                     })
                     break;
@@ -85,7 +88,7 @@ class MortgagePaymentCalc extends Component {
                         [name]: '',
                         errors:{
                             ...this.state.errors,
-                            [name+'Error']: true
+                            ['is'+name+'Error']: true
                         }
                     })
                     break;
@@ -144,13 +147,45 @@ class MortgagePaymentCalc extends Component {
 
     handleOptionalChange( e, Name) {
         e.preventDefault();
-
         const Value = e.target.value
-        this.setState({
-            [Name]: Value,
-            claculatorClicked: false,
-            })
+        switch(Name){
+            case 'PurchaseType':
+                if(Value === 'Refi')
+                    this.setState({
+                        DownP: '0',
+                        PurchaseType: 'Refi',
+                        errors: {
+                            ...this.state.errors,
+                            isDownPError: false
+                        }
+                })
+                if(Value === 'New Purchase')
+                    this.setState({
+                        DownP: '',
+                        PurchaseType: 'New Purchase',
+                        HomeValue: '',
+                        errors: {
+                            ...this.state.errors,
+                            isDownPError: false
+                        }
+                })
+                if(Value === '')
+                    this.setState({
+                        DownP: '',
+                        PurchaseType: '',
+                        errors: {
+                            ...this.state.errors,
+                            isDownPError: false
+                        }
+                })
 
+                break;
+            default:
+                this.setState({
+                    [Name]: Value,
+                    claculatorClicked: false,
+                    })
+        }
     }
     
     /////////////////////////////////////////////
@@ -187,7 +222,7 @@ render() {
     /////////////////////////
     // destructuring state //
     ////////////////////////
-    const { Pay, claculatorClicked, Amount, Rate, Terms, DownP, PurchaseType, LoanType, FirstName, LastName } = this.state
+    const { Pay, claculatorClicked, Amount, Rate, Terms, DownP, PurchaseType, LoanType, FirstName, LastName, PhoneNumber, HomeValue, CreditScore } = this.state
     const { isAmountError, isRateError, isTermsError, isDownPError } = this.state.errors
 
     ///////////////////////////////////////////
@@ -205,6 +240,37 @@ render() {
         currency: 'USD',
         minimumFractionDigits: 2
       })
+    /////////////////////////////////////
+    // conditional to display         //
+    // downpayment or property value //
+    // text field                   //
+    /////////////////////////////////
+    
+    const refiShow = (PurchaseType === 'Refi')? 
+                                            <TextField
+                                                type='number'
+                                                id="homeValue"
+                                                label="Property Value"
+                                                className='inputs'
+                                                margin="normal"
+                                                variant='filled'
+                                                value={HomeValue}
+                                                onChange={(e) => {this.handleOptionalChange(e, 'HomeValue')} }
+                                            /> 
+                                        :
+                                            <TextField
+                                                required
+                                                error = { isDownPError }
+                                                type='number'
+                                                id={"DownP"}
+                                                label="Down Payment"
+                                                className='inputs'
+                                                margin="normal"
+                                                variant="filled"
+                                                value={DownP}
+                                                onChange={ (e) => {this.handleChange(e, 'DownP')} }
+                                            /> 
+    
     ////////////////////////////////
     // displaying calculator form //
     ///////////////////////////////
@@ -238,6 +304,41 @@ render() {
 
                                     </div>
                                     <div className='inputLayout' >
+                                       
+                                    <TextField
+                                            type='tel'
+                                            id="pn"
+                                            label="Phone Number"
+                                            className='inputs'
+                                            margin="normal"
+                                            variant='filled'
+                                            value={PhoneNumber}
+                                            onChange={(e) => {this.handleOptionalChange(e, 'PhoneNumber')} }
+                                            />  
+
+
+                                        <TextField
+                                            id="CreditScore"
+                                            select
+                                            label="Credit Rating"
+                                            className='inputs'
+                                            value={CreditScore}
+                                            onChange={ (e) => {this.handleOptionalChange(e, 'CreditScore')} }
+                                            SelectProps={{
+                                            native: true,
+                                            }}
+                                            margin="normal"
+                                            variant="outlined"
+                                        >
+                                            <option value="" />
+                                            <option value={'Excelent'}>Excelent (720 +)</option>
+                                            <option value={'Good'}>Good (620-719)</option>
+                                            <option value={'Fair'}>Fair (580-619)</option>
+                                            <option value={'Poor'}>Poor (- 580)</option>
+                                        </TextField>
+
+                                    </div>
+                                    <div className='inputLayout' >
 
                                         <TextField
                                             id="PurchaseType"
@@ -253,10 +354,8 @@ render() {
                                             variant="outlined"
                                         >
                                             <option value="" />
-                                            <option value={'New Purhase'}>New Purchase</option>
-                                            <option value={'Ref'}>Refinance</option>
-                                            <option value={'Refi-Cash out'}>Refinance Cash Out</option>
-                                            <option value={'Debt Consolidation'}>Debt Consolidation</option>
+                                            <option value={'New Purchase'}>New Purchase</option>
+                                            <option value={'Refi'}>Refinance</option>
                                         </TextField>
 
                                         <TextField
@@ -290,26 +389,15 @@ render() {
                                             type='number'
                                             min=''
                                             id="TLA"
-                                            label="Property Value"
+                                            label="Loan Amount"
                                             className='inputs'
                                             margin="normal"
                                             variant="filled"
                                             value={Amount}
                                             onChange={(e) => {this.handleChange(e, 'Amount')} }
                                             />
-
-                                        <TextField
-                                            required
-                                            error = { isDownPError }
-                                            type='number'
-                                            id="DownP"
-                                            label="Down Payment"
-                                            className='inputs'
-                                            margin="normal"
-                                            variant="filled"
-                                            value={DownP}
-                                            onChange={ (e) => {this.handleChange(e, 'DownP')} }
-                                        />
+                                        
+                                        {refiShow}
 
                                     </div>
                                     <div className='inputLayout' >
@@ -337,9 +425,6 @@ render() {
                                                 onChange={ (e) => {this.handleChange(e, 'Terms')} }
                                                 SelectProps={{
                                                 native: true,
-                                                // MenuProps: {
-                                                //     className: classes.menu,
-                                                //   },
                                                 }}
                                                 margin="normal"
                                                 variant="outlined"
@@ -391,7 +476,7 @@ render() {
                                             <TableRow>
                                                 <TableCell className='tableCell'>
                                                     <Typography>
-                                                        Principal:
+                                                        Principal & Instrest:
                                                     </Typography>
                                                 </TableCell>
                                                 <TableCell className='tableCell'>
@@ -400,60 +485,14 @@ render() {
                                                     </Typography>
                                                 </TableCell>
                                             </TableRow>
-
-                                            <TableRow>
-                                                <TableCell className='tableCell'>
-                                                    <Typography>
-                                                        Tax:
-                                                    </Typography>
-                                                </TableCell>
-                                                <TableCell className='tableCell'>
-                                                    <Typography>
-                                                        { formatter.format( Pay.tax )}
-                                                    </Typography>
-                                                </TableCell>
-                                            </TableRow>
-
-                                            <TableRow>
-                                                <TableCell className='tableCell'>
-                                                    <Typography>
-                                                        Insurance:
-                                                    </Typography>
-                                                </TableCell>
-                                                <TableCell className='tableCell'>
-                                                    <Typography>
-                                                        {formatter.format( Pay.insurance )}
-                                                    </Typography>
-                                                </TableCell>
-                                            </TableRow>
-
-                                            <TableRow>
-                                                <TableCell className='tableCell'>
-                                                    <Typography>
-                                                        Mortgage Insurance:
-                                                    </Typography>
-                                                </TableCell>
-                                                <TableCell className='tableCell'>
-                                                    <Typography>
-                                                    {formatter.format( Pay.mortgageInsurance )}
-                                                    </Typography>
-                                                </TableCell>
-                                            </TableRow>
-
-                                            <TableRow>
-                                                <TableCell>
-                                                    <Typography className='tableCell'>
-                                                        Monthly Payment:
-                                                    </Typography>
-                                                </TableCell>
-                                                <TableCell className='tableCell'>
-                                                    <Typography>
-                                                        {formatter.format( Pay.total )}
-                                                    </Typography>                                                    
-                                                </TableCell>
-                                            </TableRow>
+                                            <Typography variant='caption' className='captionText'>
+                                        For informational use only. Results only include principle and intrest. If you would like more information <Link href={'tel:8019233166' }>call Tresa</Link> today.
+                                    </Typography>
                                         </TableBody>
+                                        
                                     </Table>
+                                    
+                                    
                                 </Card>
                             :
                                 <div/>

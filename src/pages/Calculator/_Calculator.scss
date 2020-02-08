@@ -3,6 +3,7 @@
 .calculatorWrapper{
     display: flex;
     justify-content: center;
+    text-align: center !important;
     .CalculatorInputLayout{
         display: flex !important;
         flex-direction: column !important;
@@ -45,8 +46,9 @@
 
     .table{
         display: flex !important;
-        flex-direction: row !important;
+        flex-direction: column !important;
         justify-content: center !important;
+        text-align: center !important;
         width:100% !important;
         border-bottom: none;
         .tableBody{
@@ -55,11 +57,12 @@
             .tableCell{
                 border-bottom: none;
             }
+            
         }
     }
+    
 }
 
-        
 
 
 @include for-phone-only-portrait{
@@ -98,6 +101,7 @@
             }
         }
         .tableCard{
+            height: 100%;
             margin: 0vh 0vw 0vh 5vw;
             padding: 4vh 0vh 4vh 0vh
         }
@@ -121,15 +125,12 @@
             }
         }
         .tableCard{
-            margin: 0vh 0vw 0vh 5vw;
-            padding: 4vh 0vh 4vh 0vh
+            margin: 0vh 0vw 0vh 5vw !important;
+            padding: 4vh 0vh 4vh 0vh !important
         }
     }
 
 }
 
-@include for-desktop-up{
-  
-    
-}
+
 
