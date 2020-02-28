@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, Container, TextField, ButtonBase, Typography, Table, TableBody, TableCell, TableRow, Link } from '@material-ui/core';
+import * as emailjs from 'emailjs-com'
 import mortgageJs from 'mortgage-js';
+
+    /////////////////////////////////
+    // format number in t currency //
+    ////////////////////////////////
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      })
 
 class MortgagePaymentCalc extends Component {
     constructor(props) {
@@ -15,7 +25,7 @@ class MortgagePaymentCalc extends Component {
                 termMonths: 0,
                 mortgageInsurance: 0,
             },
-            Amount: '',
+            Amount: formatter.format(''),
             Rate : '',
             Terms: '',
             DownP: '',
@@ -220,6 +230,29 @@ calculate() {
             claculatorClicked: true,
         })
 
+        let templateParams = {
+            last_name: this.state.LastName,
+            first_name: this.state.FirstName,
+            telephone: this.state.PhoneNumber,
+            credit_rating: this.state.CreditScore,
+            purchase_type: this.state.PurchaseType,
+            loan_type: this.state.LoanType,
+            loan_amount: formatter.format(this.state.Amount),
+            down_payment:formatter.format(this.state.DownP),
+            property_value:formatter.format(this.state.HomeValue),
+            intrest_rate: this.state.Rate,
+            loan_length: this.state.Terms,
+            total_loan: formatter.format(pay.loanAmount),
+            principal: formatter.format(pay.principalAndInterest)
+           }
+
+           emailjs.send(
+            'gmail',
+            'calulator_results',
+             templateParams,
+            'user_ObgfjLsHhOXpXZz04g8wo'
+           )
+
     };
 
     
@@ -241,14 +274,6 @@ render() {
     //////////////////////////////////////////
     const isEnabled = Amount.length > 0 && Rate.length > 0 && Terms.length > 0 && DownP.length > 0;
    
-    /////////////////////////////////
-    // format number in t currency //
-    ////////////////////////////////
-    const formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2
-      })
     /////////////////////////////////////
     // conditional to display         //
     // downpayment or property value //

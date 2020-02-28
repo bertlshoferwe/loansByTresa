@@ -7,6 +7,7 @@ import { createBrowserHistory }           from 'history'
 import * as serviceWorker              from './serviceWorker';
 import ReactGA from 'react-ga';
 import './index.css';
+import CookieBanner                     from './Components/CookieBanner/banner';
 import Header                           from './Components/Header/Header';
 import Footer                           from './Components/Footer/Footer';
 import Home                               from './pages/Home/home';
@@ -60,9 +61,12 @@ componentDidMount() {
                               <Route path="/Privacy_Policy" component={PrivacyPolicy} />
                               <Route path="/Terms_Of_Use" component={TermsOfUse} />
                               <Route path="/Calculator" component={Calculator} />
+                              {/* catch page for unmatched pages */}
+                              <Route component={Home} />
                           </Switch>
                       
                      <Footer />
+                   <CookieBanner/>
                       
                    </Fragment> 
                 </ScrollToTop> 

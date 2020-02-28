@@ -112,7 +112,7 @@ pageNavigate( pageRoute ){
                 <div className='logoWrapper' >
                     {logoOrWords}
                 </div>
-
+ 
                 <div className='optionsWrapper'>
                         {cardSet1.map(card => (<div key={card.id} className='homePaper' >
                             <ButtonBase
@@ -132,9 +132,9 @@ pageNavigate( pageRoute ){
                                     {card.title}
                                 </Typography>
                             </ButtonBase>
+                            
                         </div>
                         ))}
-
 
                 </div>
 
