@@ -16,7 +16,7 @@ render() {
     return ('',
     <CookieConsent
         location="bottom"
-        buttonText="Accept"
+        buttonText="X"
         cookieName="cookieCollectionconsent"
         style={{ background: "#2B373B", fontSize:'13px' }}
         buttonStyle={{ background: 'rgb(232, 131, 2)', color:'white', fontSize: "13px" }}
