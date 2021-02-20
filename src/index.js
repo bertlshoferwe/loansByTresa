@@ -36,22 +36,22 @@ class App extends Component {
 };
 
 componentDidMount() {
-  //set initial page for google analitics 
+  //set initial page for google analitics
   ReactGA.pageview(window.location.pathname)
 }
 
   render(){
 
-    
 
-    return ( 
+
+    return (
               <Router onUpdate={() => window.scrollTo(0, 0)}  history={history}>
                 <ScrollToTop>
                   <Fragment>
 
                       <Header/>
 
-                      
+
                           <Switch>
                               <Route exact path="/" component={Home} />
                               <Route path="/About" component={About} />
@@ -64,16 +64,16 @@ componentDidMount() {
                               {/* catch page for unmatched pages */}
                               <Route component={Home} />
                           </Switch>
-                      
+
                      <Footer />
                    <CookieBanner/>
-                      
-                   </Fragment> 
-                </ScrollToTop> 
+
+                   </Fragment>
+                </ScrollToTop>
               </Router>
     );
   }
-} 
+}
 ReactDOM.render(<App/>, document.getElementById('root'));
 
 if (module.hot) {

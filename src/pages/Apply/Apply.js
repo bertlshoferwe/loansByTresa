@@ -21,12 +21,12 @@ class Apply extends Component {
         this.setState({
           loading: false
         });
-      }; 
+      };
 
 render() {
     document.title='Loans By Tresa - Apply'
 
-    const loadingView = (this.state.loading === true)? 
+    const loadingView = (this.state.loading === true)?
                                                 <div className='loadingView'>
                                                     <CircularProgress size={80} className='loadingCircle' />
                                                 </div>
@@ -42,7 +42,7 @@ render() {
 
     return (
         <Fragment>
-            
+
             {dialog}
 
         </Fragment>

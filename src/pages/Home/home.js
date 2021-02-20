@@ -112,15 +112,15 @@ pageNavigate( pageRoute ){
                 <div className='logoWrapper' >
                     {logoOrWords}
                 </div>
- 
+
                 <div className='optionsWrapper'>
                         {cardSet1.map(card => (<div key={card.id} className='homePaper' >
                             <ButtonBase
                                 focusRipple
                                 className={card.cardButtonClass}
-                                // eslint-disable-next-line 
+                                // eslint-disable-next-line
                                 href='javascript:void(0)'
-                                onClick={ card.route } 
+                                onClick={ card.route }
                             >
                                 <span>
                                     <i className='material-icons optionsImage'> {card.icon} </i>
@@ -132,7 +132,7 @@ pageNavigate( pageRoute ){
                                     {card.title}
                                 </Typography>
                             </ButtonBase>
-                            
+
                         </div>
                         ))}
 

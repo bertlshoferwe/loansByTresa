@@ -1,374 +1,374 @@
 @mixin for-phone-only-portrait {
-    @media (max-width: 599px) { @content; }
-  }
-  @mixin for-phone-only-landscape {
-    @media (min-width: 0px) and (orientation:landscape) { @content; }
-  }
-  @mixin for-tablet-portrait-up {
-    @media (min-width: 600px) and (orientation:portrait) { @content; }
-  }
-  @mixin for-tablet-landscape-up {
-    @media (min-width: 900px) and (orientation:landscape) { @content; }
-  }
-  @mixin for-desktop-up {
-    @media (min-width: 1200px) and (orientation:landscape) { @content; }
-  }
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-phone-only-landscape {
+  @media (min-width: 0px) and (orientation:landscape) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) and (orientation:portrait) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) and (orientation:landscape) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) and (orientation:landscape) { @content; }
+}
 
 $blue:rgb(8, 59, 102);
 $orange:rgb(232, 131, 2);
-$gray: rgb(194, 192, 192); 
+$gray: rgb(194, 192, 192);
 
-  .background{
-    background-image: url(../../images/Background.jpg);
-    position: fixed;
-    background-size: cover;
-    background-position: 65% center;
-    background-repeat: no-repeat;
-    overflow:hidden;
-    filter:blur(2px);
-    height: 100vh;
-    width: 100%;
-    z-index: -1
+.background{
+  background-image: url(../../images/Background.jpg);
+  position: fixed;
+  background-size: cover;
+  background-position: 65% center;
+  background-repeat: no-repeat;
+  overflow:hidden;
+  filter:blur(2px);
+  height: 100vh;
+  width: 100%;
+  z-index: -1
 }
 .pageTitle{
-  margin-top: 12vh !important;
-  margin-bottom: 4vh !important;
-  color: $blue
+margin-top: 12vh !important;
+margin-bottom: 4vh !important;
+color: $blue
 }
 .homeWrapper{
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+z-index: 3;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 .logoWrapper{
-  margin-top: 10vh;
-    width: 100%;
-    height: auto; 
-    display: flex;
-    text-align: center;
-    justify-content: center;
+margin-top: 10vh;
+  width: 100%;
+  height: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 .loadingView{
-  margin-top: 50vh;
-  width: 100vw;
-  height: 100vh;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  .loadingCircle{
-    color:$orange !important
-  }
+margin-top: 50vh;
+width: 100vw;
+height: 100vh;
+display:flex;
+flex-direction:column;
+align-items: center;
+.loadingCircle{
+  color:$orange !important
+}
 }
 .iframe{
-  margin-top:4vh;
-  width: 99.7%;
-  height: 100vh;
-  color:$orange;
-  overflow: hidden;
+margin-top:4vh;
+width: 99.7%;
+height: 100vh;
+color:$orange;
+overflow: hidden;
 
 }
 .DialogAppBar{
-  background-color:$blue !important
+background-color:$blue !important
 }
 .containerMargin{
-  margin-top:10vh 
+margin-top:10vh
 }
 
 @include for-phone-only-portrait{
-    .background::before {
-        content: "";
-      position: absolute;
-      left: 0; right: 0;
-      top: 0; bottom: 0;
-        background: rgba($gray, 0.6);
+  .background::before {
+      content: "";
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+      background: rgba($gray, 0.6);
+    }
+    .pageTitle{
+      margin-left: 5vw !important;
+      max-width: 50vw !important;
+    }
+  .logoWrapper{
+    margin-top: 6vh;
+      width: 100%;
+      height: auto;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+  }
+  .logo{
+      width: 95vw;
+      height: 35vh
+  }
+  .optionsWrapper{
+      margin-top: 2vh;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      .calculator{
+        width:87vw;
+      };
       }
-      .pageTitle{
-        margin-left: 5vw !important;
-        max-width: 50vw !important;
-      }
-    .logoWrapper{
-      margin-top: 6vh;
-        width: 100%;
-        height: auto;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-    }
-    .logo{
-        width: 95vw;
-        height: 35vh
-    }
-    .optionsWrapper{
-        margin-top: 2vh;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        .calculator{
-          width:87vw;
-        };
-        }
-    .homePaper{
-        background-color: $blue !important;
-        margin-top: 3vh;
-        border-radius: 10px;
-    }
-    .homeButton{
-        height: 21vh;
-        width: 40vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .optionsImage{
-        font-size: 70px;
-        color:$gray
-    }
-    .optionsText{
-        font-size: 28px;
-        color:$orange;
-    }
-    .iframe{
-      margin-top:6vh;
-      margin-bottom:-10vh
-    }
-    
+  .homePaper{
+      background-color: $blue !important;
+      margin-top: 3vh;
+      border-radius: 10px;
+  }
+  .homeButton{
+      height: 21vh;
+      width: 40vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .optionsImage{
+      font-size: 70px;
+      color:$gray
+  }
+  .optionsText{
+      font-size: 28px;
+      color:$orange;
+  }
+  .iframe{
+    margin-top:6vh;
+    margin-bottom:-10vh
+  }
+
 }
 
 
 
 @include for-phone-only-landscape{
-  .background{
-    background-position:  center;
-    background-size: auto 100vh;
-    filter:blur(0px);
+.background{
+  background-position:  center;
+  background-size: auto 100vh;
+  filter:blur(0px);
 }
 .background::before {
-    background: none
+  background: none
 }
 .pageTitle{
-  margin-left: 2vw !important;
-  max-width: 75vw;
+margin-left: 2vw !important;
+max-width: 75vw;
 }
 .homeWrapper{
-  z-index: 1;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+z-index: 1;
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 .logoWrapper{
-  margin-top:9vh;
-  width:100%;
-  height: 66vh
+margin-top:9vh;
+width:100%;
+height: 66vh
 }
 .welcome{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-  color:white !important;
-  background-color: rgba($blue, 0.6);
-  margin-top: 1vh !important;
-  width:65vw;
-  height: 56vh;
-  border-radius:10px
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:center;
+color:white !important;
+background-color: rgba($blue, 0.6);
+margin-top: 1vh !important;
+width:65vw;
+height: 56vh;
+border-radius:10px
 }
 .applyButton{
-  background-color:$orange !important;
-  margin: 2vh 0vh 3vh 0vh !important;
-  padding:0vw !important;
-  height: 10vh;
-  width: 37vw;
-  border-radius:6px !important;
+background-color:$orange !important;
+margin: 2vh 0vh 3vh 0vh !important;
+padding:0vw !important;
+height: 10vh;
+width: 37vw;
+border-radius:6px !important;
 }
 .optionsWrapper{
-  width: 100vw;
-  height: 25vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around ;
-  background-color: white !important;
+width: 100vw;
+height: 25vh;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-around ;
+background-color: white !important;
 }
 .homePaper{
-  width:50%;
-  background-color: white !important;
+width:50%;
+background-color: white !important;
 }
 .optionsImage{
-  font-size: 50px;
-  color:$blue
+font-size: 50px;
+color:$blue
 }
 .optionsText{
-  font-size: 25px !important;
-  color: $orange
+font-size: 25px !important;
+color: $orange
 }
 .homeButton{
-  height: 100%;
-  width: 20vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+height: 100%;
+width: 20vw;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 .iframe{
-  margin-top:8vh;
+margin-top:8vh;
 }
-    
+
 }
 
 
 
 @include for-tablet-portrait-up{
 .background{
-    background-position:  center;
-    background-size: auto 100%;
-    filter:blur(0px);
+  background-position:  center;
+  background-size: auto 100%;
+  filter:blur(0px);
 }
 .background::before {
-    background: none
+  background: none
 }
 .pageTitle{
-  margin-left: 2vw !important;
+margin-left: 2vw !important;
 }
 .homeWrapper{
-  z-index: 1;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+z-index: 1;
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 .logoWrapper{
-  margin-top:15vh;
-  width:100%;
-  height: 66vh
+margin-top:15vh;
+width:100%;
+height: 66vh
 }
 .welcome{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-  color:white !important;
-  background-color: rgba($blue, 0.6);
-  margin-top: 5vh !important;
-  width:70vw;
-  height: 37vh;
-  border-radius:10px
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:center;
+color:white !important;
+background-color: rgba($blue, 0.6);
+margin-top: 5vh !important;
+width:70vw;
+height: 37vh;
+border-radius:10px
 }
 .applyButton{
-  background-color:$orange !important;
-  margin-top: 2vh !important;
-  padding:1vw !important;
-  height:5vh;
-  width: 30vw;
-  border-radius:6px !important
+background-color:$orange !important;
+margin-top: 2vh !important;
+padding:1vw !important;
+height:5vh;
+width: 30vw;
+border-radius:6px !important
 }
 .optionsWrapper{
-  width: 100vw;
-  height: 25vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around ;
-  background-color: white !important;
+width: 100vw;
+height: 25vh;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-around ;
+background-color: white !important;
 }
 .optionsImage{
-  font-size: 65px;
-  color:$blue
+font-size: 65px;
+color:$blue
 }
 .optionsText{
-  font-size: 35px !important;
-  color: $orange
+font-size: 35px !important;
+color: $orange
 }
 .homePaper{
-  background-color: white !important;
+background-color: white !important;
 }
 .homeButton{
-  height: 100%;
-  width: 25vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center
+height: 100%;
+width: 25vw;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center
 }
 .iframe{
-  margin-top:6vh
+margin-top:6vh
 }
 }
 
 @include for-tablet-landscape-up{
-  .welcome{
-    width:60vw;
-    height: 40vh;
-    margin-top: 10vh !important;
-  }
-  .applyButton{
-    height:6vh;
-    width: 25vw;
-  }
-  .optionsWrapper{
-    width:100%;
-  }
-  .homePaper{
-    width:33.3%
-  }
-  .optionsImage{
-    font-size: 65px;
-  }
-  .optionsText{
-    font-size: 35px !important;
-  }
-  .iframe{
-    margin-top:8vh
-  }
-    
+.welcome{
+  width:60vw;
+  height: 40vh;
+  margin-top: 10vh !important;
+}
+.applyButton{
+  height:6vh;
+  width: 25vw;
+}
+.optionsWrapper{
+  width:100%;
+}
+.homePaper{
+  width:33.3%
+}
+.optionsImage{
+  font-size: 65px;
+}
+.optionsText{
+  font-size: 35px !important;
+}
+.iframe{
+  margin-top:8vh
+}
+
 }
 
 
 @include for-desktop-up{
-  .welcome{
-    width:50vw;
-  }
-  .applyButton{
-    height:7vh;
-    width: 20vw;
-    &:hover{
-      &:before{
-        content: "";
-        position: absolute;
-        left: 0; right: 0;
-        top: 0; bottom: 0;
-        background: rgba($blue, 0.1);
-      }
+.welcome{
+  width:50vw;
+}
+.applyButton{
+  height:7vh;
+  width: 20vw;
+  &:hover{
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      top: 0; bottom: 0;
+      background: rgba($blue, 0.1);
     }
   }
-  .homeButton{
-    &:hover{
-      &:before{
-        content: "";
-        position: absolute;
-        left: 0; right: 0;
-        top: 0; bottom: 0;
-        background: rgba($blue, 0.1);
-      }
+}
+.homeButton{
+  &:hover{
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      top: 0; bottom: 0;
+      background: rgba($blue, 0.1);
     }
   }
-  .optionsWrapper{
-    width:100%;
-  }
-  .optionsText{
-    font-size: 45px !important;
-  }
-  .iframe{
-    margin-top:10vh
-  }
-    
+}
+.optionsWrapper{
+  width:100%;
+}
+.optionsText{
+  font-size: 45px !important;
+}
+.iframe{
+  margin-top:10vh
+}
+
 }
 
