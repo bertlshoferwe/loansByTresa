@@ -52,7 +52,7 @@ pageNavigate( pageRoute ){
                 title: 'Loans',
                 icon: 'home',
                 route: () => {this.pageNavigate('/Loans')},
-                link: 'javascript:void(0)',
+                link: '',
                 cardButtonClass: 'homeButton'
             },
             {
@@ -69,7 +69,7 @@ pageNavigate( pageRoute ){
                 title: 'Glossary',
                 icon: 'help',
                 route: () => {this.pageNavigate('/Glossary')},
-                link: 'javascript:void(0)',
+                link: '',
                 cardButtonClass: 'homeButton'
             },
             {
@@ -77,7 +77,7 @@ pageNavigate( pageRoute ){
                 title: 'About Me',
                 icon: 'account_box',
                 route: () => {this.pageNavigate('/About')},
-                link: 'javascript:void(0)',
+                link: '',
                 cardButtonClass: 'homeButton'
             },
             {
@@ -85,7 +85,7 @@ pageNavigate( pageRoute ){
                 title: 'Calculator',
                 icon: 'dialpad',
                 route: () => {this.pageNavigate('/Calculator')},
-                link: 'javascript:void(0)',
+                link: '',
                 cardButtonClass: 'homeButton calculator'
             },
         ];
