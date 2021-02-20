@@ -28,6 +28,10 @@
     border-style:solid;
     border-color:$orange $orange transparent $orange;
   }
+  .textColor{
+    color: white;
+    font-weight: 900;
+  }
 }
 
 @include for-phone-only-portrait{
@@ -43,7 +47,7 @@
     }
     .flag{
       width:100px;
-      height:45px;
+      height:80px;
       right: 10vw;
       &:after {
         content:"";
@@ -52,7 +56,7 @@
         height:0;
         border-width:5px 50px 30px 50px;
       }
-      
+
     }
 }
 
@@ -68,7 +72,7 @@
 }
 .flag{
   width:100px;
-  height:55px;
+  height:85px;
   right: 10vw;
   &:after {
     content:"";
@@ -77,8 +81,8 @@
     height:0;
     border-width:5px 50px 30px 50px;
   }
-  
-  }    
+
+  }
 }
 
 @include for-tablet-portrait-up{
@@ -90,17 +94,17 @@
 }
 .flag{
   width:100px;
-  height:70px;
+  height:80px;
   right: 10vw;
   &:after {
     content:"";
-    top:25px;
+    top:0px;
     width:0;
     height:0;
     border-width:5px 50px 30px 50px;
   }
-  
-  }   
+
+  }
 }
 
 @include for-tablet-landscape-up{
@@ -116,9 +120,9 @@
   }
   .flag{
     right: 12vw;
-    
-    }   
-    
+
+    }
+
 }
 
 
@@ -137,14 +141,14 @@
         background: rgba($blue, 0.1);
       }
     }
-  } 
+  }
   .flag{
     right: 10vw;
-    height:80px;
+    height:100px;
     padding-top: 20px;
     &:after {
-      top:35px;
+      top:25px;
     }
-    }   
+    }
 }
 

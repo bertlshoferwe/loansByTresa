@@ -76,6 +76,10 @@ background-color:$blue !important
 .containerMargin{
 margin-top:10vh
 }
+.textColor{
+  color: white;
+  font-weight: 900;
+}
 
 @include for-phone-only-portrait{
   .background::before {

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router'
 import ReactGA from 'react-ga';
 import './_app.scss';
 import Logo from '../../images/Logo.png';
-import { ButtonBase, Typography } from '@material-ui/core';
+import { Button, ButtonBase, Typography } from '@material-ui/core';
 
 class Home extends Component {
     constructor(props) {
@@ -52,13 +52,16 @@ pageNavigate( pageRoute ){
                 title: 'Loans',
                 icon: 'home',
                 route: () => {this.pageNavigate('/Loans')},
+                link: 'javascript:void(0)',
                 cardButtonClass: 'homeButton'
             },
             {
                 id: 2,
                 title: 'Apply',
                 icon: 'library_books',
-                route: () => {this.pageNavigate('/Apply')},
+                route: '',
+                // route: () => {this.pageNavigate('/Apply')},
+                link: 'https://www.blink.mortgage/app/signup/p/altiusmortgagegroup/tresabertlshofer',
                 cardButtonClass: 'homeButton'
             },
             {
@@ -66,6 +69,7 @@ pageNavigate( pageRoute ){
                 title: 'Glossary',
                 icon: 'help',
                 route: () => {this.pageNavigate('/Glossary')},
+                link: 'javascript:void(0)',
                 cardButtonClass: 'homeButton'
             },
             {
@@ -73,6 +77,7 @@ pageNavigate( pageRoute ){
                 title: 'About Me',
                 icon: 'account_box',
                 route: () => {this.pageNavigate('/About')},
+                link: 'javascript:void(0)',
                 cardButtonClass: 'homeButton'
             },
             {
@@ -80,6 +85,7 @@ pageNavigate( pageRoute ){
                 title: 'Calculator',
                 icon: 'dialpad',
                 route: () => {this.pageNavigate('/Calculator')},
+                link: 'javascript:void(0)',
                 cardButtonClass: 'homeButton calculator'
             },
         ];
@@ -91,14 +97,14 @@ pageNavigate( pageRoute ){
                 <div className='welcome'>
                     <Typography  variant='h1'> Welcome</Typography>
                     <Typography  variant='h4'> Looking For A Fast Loan</Typography>
-                    <ButtonBase focusRipple
-                                className='applyButton'
-                                onClick={ () => {this.pageNavigate( '/Apply')} }
-                            >
-                                <Typography  variant='h6' >
-                                    Get Pre-Qualified today
-                                </Typography>
-                            </ButtonBase>
+                    <Button   className='applyButton'
+                        // onClick={ () => {this.pageNavigate( '/Apply')} }
+                        href="https://www.blink.mortgage/app/signup/p/altiusmortgagegroup/tresabertlshofer"
+                    >
+                        <Typography className='textColor' variant='h6' >
+                            Get Pre-Qualified today
+                        </Typography>
+                    </Button>
                 </div>;
 
 
@@ -119,7 +125,7 @@ pageNavigate( pageRoute ){
                                 focusRipple
                                 className={card.cardButtonClass}
                                 // eslint-disable-next-line
-                                href='javascript:void(0)'
+                                href={card.link}
                                 onClick={ card.route }
                             >
                                 <span>
